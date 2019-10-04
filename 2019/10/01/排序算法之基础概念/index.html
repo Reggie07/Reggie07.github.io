@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>使用hexo搭建博客 | MyBlog</title>
+  <title>排序算法之基础概念 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用hexo搭建hexo博客 mac版本文内容根据哔哩哔哩up主CodeSheep视频内容整理">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="排序：算法基础">
+<meta name="keywords" content="排序算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用hexo搭建博客">
-<meta property="og:url" content="http://yoursite.com/2019/09/22/使用hexo搭建博客/index.html">
+<meta property="og:title" content="排序算法之基础概念">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/排序算法之基础概念/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="使用hexo搭建hexo博客 mac版本文内容根据哔哩哔哩up主CodeSheep视频内容整理">
+<meta property="og:description" content="排序：算法基础">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-25T13:13:00.060Z">
+<meta property="og:updated_time" content="2019-10-04T02:47:49.054Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用hexo搭建博客">
-<meta name="twitter:description" content="使用hexo搭建hexo博客 mac版本文内容根据哔哩哔哩up主CodeSheep视频内容整理">
+<meta name="twitter:title" content="排序算法之基础概念">
+<meta name="twitter:description" content="排序：算法基础">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -151,109 +151,139 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-使用hexo搭建博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-排序算法之基础概念" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      使用hexo搭建博客
+      排序算法之基础概念
     </h1>
   
 
         
-        <a href="/2019/09/22/使用hexo搭建博客/" class="archive-article-date">
-  	<time datetime="2019-09-22T03:28:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
+        <a href="/2019/10/01/排序算法之基础概念/" class="archive-article-date">
+  	<time datetime="2019-10-01T14:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="使用hexo搭建hexo博客-mac版"><a href="#使用hexo搭建hexo博客-mac版" class="headerlink" title="使用hexo搭建hexo博客 mac版"></a>使用hexo搭建hexo博客 mac版</h1><p align="right">本文内容根据哔哩哔哩up主CodeSheep视频内容整理</p>
+        <h1 id="排序：算法基础"><a href="#排序：算法基础" class="headerlink" title="排序：算法基础"></a>排序：算法基础</h1><a id="more"></a>
+<p align="right">根据马士兵老师的算法课整理笔记</p>
 
-<a id="more"></a> 
-<p><a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">视频链接</a><br>衷心感谢程序羊！</p>
+<h2 id="程序员内功："><a href="#程序员内功：" class="headerlink" title="程序员内功："></a>程序员内功：</h2><p>算法基础，逻辑基础，数学基础</p>
 <hr>
-<h2 id="如何部署环境"><a href="#如何部署环境" class="headerlink" title="如何部署环境"></a>如何部署环境</h2><p>安装node.js  </p>
-<blockquote>
-<p>hexo需要node.js支持，需要官网下载node.js</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su       切换到root用户</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v       查看node版本，检查是否安装成功</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v        查看包管理器版本，检查是否安装成功</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>由于国内的镜像源速度很慢，要利用npm安装cnpm</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm –registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
+<h2 id="什么是数据结构Data-Structure？"><a href="#什么是数据结构Data-Structure？" class="headerlink" title="什么是数据结构Data Structure？"></a>什么是数据结构Data Structure？</h2><p>存储数据的不同方式。</p>
+<hr>
+<h2 id="什么是算法？"><a href="#什么是算法？" class="headerlink" title="什么是算法？"></a>什么是算法？</h2><p>同一个问题的不同解决方法。<br>每一种不同的数据结构在不同的问题上各有利弊。</p>
+<hr>
+<p>如何测算算法的优劣？</p>
 <ul>
-<li>-g ———— 表示全局安装</li>
-<li>registry= —– 表示指定镜像源<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v        查看cnpm的版本,检查是否安装成功</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<hr>
-<h2 id="如何初始化环境"><a href="#如何初始化环境" class="headerlink" title="如何初始化环境"></a>如何初始化环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli  使用cnpm安装hexo框架</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v                   查看版本，验证是否安装成功</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在当前路径下建立一个文件夹，用于存放博客相关文件<br>如果出现什么问题，不慌，删除该目录，重新搭建即可</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog                创建个文件夹</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog                   进入blog文件夹下</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init            初始化hexo博客</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s                    启动博客,本地预览</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在浏览器输入localhost:4000<br>即可查看博客内容</p>
-</blockquote>
-<hr>
-<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n “文章名”            新建文章</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>新建文章的在 blog/source/_posts/ 下<br>基于markdown语法对文章进行变编辑</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">回到blog路径下</span><br><span class="line">hexo clean                清理</span><br><span class="line">hexo g                    生成</span><br><span class="line">hexo s                    再次启动</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在浏览器输入localhost:4000<br>即可查看到自己的博客内容</p>
-</blockquote>
-<hr>
-<h2 id="如何把个人博客部署到远端"><a href="#如何把个人博客部署到远端" class="headerlink" title="如何把个人博客部署到远端"></a>如何把个人博客部署到远端</h2><ul>
-<li><p>登录到github  </p>
-</li>
-<li><p>新建一个仓库repository<br><font color="brown">仓库名字：昵称.github.io</font> </p>
-</li>
-<li><p>在blog目录下安装一个git部署插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install –save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改设置_config.yml文件  </p>
+<li><p>时间测算  </p>
 <ul>
-<li>修改deployment配置，并保存</li>
+<li>计算算法时间差<br>在算法前后，声明两个时间，计算时间差<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> before = System.currentTimeMillis();</span><br><span class="line"><span class="keyword">long</span> after  = System.currentTimeMillis();</span><br><span class="line">System.out.println(after-before);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>空间测算  </p>
+<ul>
+<li>算法在执行过程中需要用到的额外空间。</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/昵称/昵称.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d    #部署到远端</span><br></pre></td></tr></table></figure>
-
+<hr>
+<h2 id="Big-O"><a href="#Big-O" class="headerlink" title="Big O"></a>Big O</h2><h3 id="时间与问题规模的关系："><a href="#时间与问题规模的关系：" class="headerlink" title="时间与问题规模的关系："></a>时间与问题规模的关系：</h3><p>即：计算机解决问题的时间随着问题规模的变化是如何变化的。一般时间复杂度我们都是讲<font color="red"><b>最差</b></font>的情况。</p>
 <ul>
-<li>根据提示输入github用户名和密码</li>
+<li>不考虑必须要做的操作<br>  循环、赋值、程序初始化…</li>
+<li>不考虑常数项  </li>
+<li>不考虑低次项  </li>
 </ul>
+<p>例如：<br>访问数组某个位置的值：计算偏移量<br><font color="#1aff1a">O(1)</font>：表示时间复杂度是一个常数，与规模无关。<br>访问链表某个位置的值：<br><font color="#1aff1a">O(n)</font>：当问题规模扩大的时候，需要的时间成正比例增长。<br>例：求数组平均数的时间复杂度：O(n)<br><b>注意：</b> <font color="#0099ff"><br>忽略系数 &nbsp;&nbsp;&nbsp;忽略常数项&nbsp;&nbsp;&nbsp; 忽略低次项  </font></p>
 <hr>
-<h2 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h2><p>可以在hexo官网下载相主题和插件，也可登录github下载安装<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">主题</a><br><a href="https://hexo.io/plugins/" target="_blank" rel="noopener">插件</a><br><a href="https://github.com/" target="_blank" rel="noopener">github</a><br>下载主题放在/blog/themes路径下<br>修改_config.yml文件</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">主题名</span></span><br></pre></td></tr></table></figure>
-
-<hr>
+<h2 id="常见排序算法"><a href="#常见排序算法" class="headerlink" title="常见排序算法"></a>常见排序算法</h2><table>
+<thead>
+<tr>
+<th align="center">中文名称</th>
+<th align="center">英文名称</th>
+<th align="center">平均时间复杂度</th>
+<th align="center">空间复杂度</th>
+<th align="center">稳定性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">选择排序</td>
+<td align="center">selection</td>
+<td align="center">n<sup>2</sup></td>
+<td align="center">1</td>
+<td align="center">不稳</td>
+</tr>
+<tr>
+<td align="center">冒泡排序</td>
+<td align="center">bubble</td>
+<td align="center">n<sup>2</sup></td>
+<td align="center">1</td>
+<td align="center">稳</td>
+</tr>
+<tr>
+<td align="center">插入排序</td>
+<td align="center">insertion</td>
+<td align="center">n<sup>2</sup></td>
+<td align="center">1</td>
+<td align="center">稳</td>
+</tr>
+<tr>
+<td align="center">快速排序</td>
+<td align="center">quick</td>
+<td align="center">n log<sub>2</sub>n</td>
+<td align="center">log<sub>2</sub>n</td>
+<td align="center">不稳</td>
+</tr>
+<tr>
+<td align="center">归并排序</td>
+<td align="center">merge</td>
+<td align="center">n log<sub>2</sub>n</td>
+<td align="center">n</td>
+<td align="center">稳</td>
+</tr>
+<tr>
+<td align="center">堆排序</td>
+<td align="center">heap</td>
+<td align="center">n log<sub>2</sub>n</td>
+<td align="center">1</td>
+<td align="center">不稳</td>
+</tr>
+<tr>
+<td align="center">希尔排序</td>
+<td align="center">shell</td>
+<td align="center">n<sup>1.3</sup></td>
+<td align="center">1</td>
+<td align="center">不稳</td>
+</tr>
+<tr>
+<td align="center">桶排序</td>
+<td align="center">bucket</td>
+<td align="center">n + k</td>
+<td align="center">n + k</td>
+<td align="center">稳</td>
+</tr>
+<tr>
+<td align="center">计数排序</td>
+<td align="center">counting</td>
+<td align="center">n + k</td>
+<td align="center">n + k</td>
+<td align="center">稳</td>
+</tr>
+<tr>
+<td align="center">基数排序</td>
+<td align="center">radix</td>
+<td align="center">n * k</td>
+<td align="center">n + k</td>
+<td align="center">稳</td>
+</tr>
+</tbody></table>
 
       
 
@@ -267,7 +297,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
         		</li>
       		
 		</ul>
@@ -323,7 +353,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/22/使用hexo搭建博客/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/01/排序算法之基础概念/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -337,18 +367,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/23/计算机操作系统：绪论/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/03/排序算法之选择排序/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          计算机操作系统：绪论
+          排序算法之选择排序
         
       </div>
     </a>
   
   
-    <a href="/2019/09/22/markdown语法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">markdown语法总览</div>
+    <a href="/2019/09/27/计算机操作系统：体系结构/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机操作系统：体系结构</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -375,7 +405,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用hexo搭建hexo博客-mac版"><span class="toc-number">1.</span> <span class="toc-text">使用hexo搭建hexo博客 mac版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何部署环境"><span class="toc-number">1.1.</span> <span class="toc-text">如何部署环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何初始化环境"><span class="toc-number">1.2.</span> <span class="toc-text">如何初始化环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写博客"><span class="toc-number">1.3.</span> <span class="toc-text">写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何把个人博客部署到远端"><span class="toc-number">1.4.</span> <span class="toc-text">如何把个人博客部署到远端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题选择"><span class="toc-number">1.5.</span> <span class="toc-text">主题选择</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#排序：算法基础"><span class="toc-number">1.</span> <span class="toc-text">排序：算法基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序员内功："><span class="toc-number">1.1.</span> <span class="toc-text">程序员内功：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是数据结构Data-Structure？"><span class="toc-number">1.2.</span> <span class="toc-text">什么是数据结构Data Structure？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是算法？"><span class="toc-number">1.3.</span> <span class="toc-text">什么是算法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Big-O"><span class="toc-number">1.4.</span> <span class="toc-text">Big O</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时间与问题规模的关系："><span class="toc-number">1.4.1.</span> <span class="toc-text">时间与问题规模的关系：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见排序算法"><span class="toc-number">1.5.</span> <span class="toc-text">常见排序算法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
