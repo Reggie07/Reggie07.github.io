@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>markdown语法总览 | MyBlog</title>
+  <title>排序算法之选择排序 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="语法简介">
-<meta name="keywords" content="markdown语法">
+  <meta name="description" content="选择排序">
+<meta name="keywords" content="排序算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markdown语法总览">
-<meta property="og:url" content="http://yoursite.com/2019/09/22/markdown语法/index.html">
+<meta property="og:title" content="排序算法之选择排序">
+<meta property="og:url" content="http://yoursite.com/2019/10/02/排序算法之选择排序/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="语法简介">
+<meta property="og:description" content="选择排序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/assets/tx.jpeg">
-<meta property="og:updated_time" content="2019-09-25T13:06:06.378Z">
+<meta property="og:updated_time" content="2019-10-05T23:48:50.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markdown语法总览">
-<meta name="twitter:description" content="语法简介">
-<meta name="twitter:image" content="http://yoursite.com/assets/tx.jpeg">
+<meta name="twitter:title" content="排序算法之选择排序">
+<meta name="twitter:description" content="选择排序">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -153,127 +151,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-markdown语法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-排序算法之选择排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      markdown语法总览
+      排序算法之选择排序
     </h1>
   
 
         
-        <a href="/2019/09/22/markdown语法/" class="archive-article-date">
-  	<time datetime="2019-09-22T01:27:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
+        <a href="/2019/10/02/排序算法之选择排序/" class="archive-article-date">
+  	<time datetime="2019-10-02T04:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="语法简介"><a href="#语法简介" class="headerlink" title="语法简介"></a>语法简介</h1><a id="more"></a> 
-<h2 id="总体规则"><a href="#总体规则" class="headerlink" title="总体规则"></a>总体规则</h2><p>在换行的时候要输入两个空格键<br>一切特殊符号都要在英文输入法状态下使用  </p>
-<hr>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用标题时需要#号<br>几个#号，则表示几级标题</p>
-<hr>
-<h2 id="文本对齐方式"><a href="#文本对齐方式" class="headerlink" title="文本对齐方式"></a>文本对齐方式</h2><ul>
-<li><p>代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p align=&quot;left&quot;&gt;左对齐&lt;/p&gt;</span><br><span class="line">&lt;p align=&quot;right&quot;&gt;右对齐&lt;/p&gt;</span><br><span class="line">&lt;p align=&quot;center&quot;&gt;居中&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示</p>
-<p align="left">左对齐</p>
-<p align="right">右对齐</p>
-<p align="center">居中</p>
-
-</li>
-</ul>
-<hr>
-<h2 id="文本高亮"><a href="#文本高亮" class="headerlink" title="文本高亮"></a>文本高亮</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;  文本高亮</span><br></pre></td></tr></table></figure>
+        <h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><a id="more"></a>
+<p align="right">根据马士兵老师算法课整理</p>
 
 <blockquote>
-<p>文本高亮<br>使用 “&gt;” 符号</p>
+<p>选择排序<br>时间复杂度：<font color="red">O(n<sup>2</sup>)</font><br>空间复杂度：<font color="red">1</font><br>稳定性：<font color="red">不稳定 </font></p>
 </blockquote>
 <hr>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[百度](https://www.baidu.com)</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
-<hr>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/assets/tx.jpeg)       本地路径，显示图片</span><br></pre></td></tr></table></figure>
-
-<p><img src="/assets/tx.jpeg" alt></p>
-<hr>
-<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
-<li>通常使用*号标识  <ul>
-<li>*号前面输入两个空格，代表缩进</li>
+<h1 id="如何写算法程序："><a href="#如何写算法程序：" class="headerlink" title="如何写算法程序："></a>如何写算法程序：</h1><ul>
+<li>由简单到复杂   <ul>
+<li>验证一步走一步</li>
+<li>多打印中间结果</li>
 </ul>
 </li>
-<li>也可以使用+ -  </li>
+<li>先整体后局部<ul>
+<li>没思路时先细分</li>
+</ul>
+</li>
+<li>先粗糙后精细<ul>
+<li>变量更名</li>
+<li>语句合并</li>
+<li>边界处理</li>
+</ul>
+</li>
 </ul>
 <hr>
-<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>使用数字标识  </p>
-<ol>
-<li>第一项<br>1.1 在前面添加两个空格,缩进</li>
-<li>第二项  </li>
-<li>第三项  </li>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>过滤数组，找到数组中最小的数，与第一个数换位置；<br>在剩下的数据中，再找到最小的数，与第二个数交换位置；<br>以此类推。  </p>
+<hr>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>引入一个<font color="gree">变量</font>，记录<font color="orange">最小值的下标</font>，最开始假设为<font color="red">零</font>。然后用<font color="orange">最小值下标</font>这个位置上的数和下一个数作比较。如果下一个数小于<font color="orange">最小值下标</font>这个数，则把第二个数的下标赋给<font color="orange">最小值下标</font>这个<font color="gree">变量</font>。接下来继续向下比，遍历整个数组，找到最小的数，记录其<font color="orange">下标</font>。最后，把这个位置上的数字，与第一个位置上的数作交换。以此类推。</p>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SelectionSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> [] a)</span></span>&#123;<span class="comment">//打印数组方法</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;a.length; i++)&#123;</span><br><span class="line">			System.out.print (a[i] + <span class="string">"  "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> [] arr, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">         <span class="comment">//元素交换方法</span></span><br><span class="line">		 <span class="keyword">int</span> temp = arr [a ] ;</span><br><span class="line">		 arr [a] = arr[b];</span><br><span class="line">		 arr[b]=temp; </span><br><span class="line">	 &#125;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;arr.length-<span class="number">1</span>; i++)&#123;</span><br><span class="line">	        <span class="comment">//边界处理。j=i+1，所以要保证i后面有值  </span></span><br><span class="line">			<span class="keyword">int</span> minPos = i ;<span class="comment">//存放最小值下标</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;arr.length; j++)&#123;</span><br><span class="line">                minPos=arr[minPos]&gt;arr[j]?j:minPos;</span><br><span class="line">                <span class="comment">//代码简化</span></span><br><span class="line">			&#125;</span><br><span class="line">			change ( arr, i, minPos);</span><br><span class="line">			print ( arr);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String args [])</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> [] arr = &#123; <span class="number">5</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">2</span>&#125;;</span><br><span class="line">        selectSort(arr);</span><br><span class="line">        print (arr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] arr=&#123;<span class="number">5</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>数组的初始化，打印语句。不计入算法时间。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;arr.length-<span class="number">1</span>; i++)&#123;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>i = 0; 只执行一次，这是一个常数时间<font color="red">O(1)</font>。<br>i &lt; arr.length-1; 要判断n-1次，时间复杂度为<font color="red">O(n-1)</font>，忽略常数项，简化为<font color="red">O(n)</font>。<br>i++; <font color="red">O(n)</font>。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;arr.length; j++)&#123;</span><br><span class="line">    minPos=arr[minPos]&gt;arr[j]?arr[j]:minPos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>int j=i+1; 外面循环执行一次，内层就执行一次，所以时间复杂度为<font color="red">O(n)</font>。<br>j &lt; arr.length; 外层循环执行一次，内层循环执行n次。而外层循环执行共n次，所以时间复杂度为<font color="red">O(n<sup>2</sup>)</font>。更为精准的说法是<font color="orange">(n-1)+(n-2)+…+(1)</font>等差数列求和，忽略常数项，忽略系数，忽略低次项，时间复杂度为<font color="red">O(n<sup>2</sup>)</font>。<br>同理 j++；是<font color="red">O(n<sup>2</sup>)</font>。<br>minPos = arr [ minPos] &gt; arr [ j ] ? arr [ j ] : minPos ;也是<font color="red">O(n<sup>2</sup>)</font>。</p>
+</blockquote>
+<p>所以选择排序的时间复杂度为<font color="red">O(n<sup>2</sup>)</font>。</p>
+<hr>
+<h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><p>不稳定是指，数组中两个相等的数，在排好顺序后，相对顺序可能会发生变化。</p>
+<hr>
+<h1 id="验证算法-—-对数器"><a href="#验证算法-—-对数器" class="headerlink" title="验证算法 — 对数器"></a>验证算法 — 对数器</h1><ul>
+<li>如何验证算法是否正确？<ol>
+<li>肉眼观察</li>
+<li>产生足够多的随机样本</li>
+<li>确定正确的算法计算样本的结果</li>
+<li>对比被验证算法的结果</li>
 </ol>
-<hr>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>“—“   “***”<br>使用三个或大于三个的”—“ 或 “星号”    </p>
-<hr>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><ul>
-<li>在代码的前一行及后一行使用三个反引号esc键下方` </li>
-<li>同时第一行反引号后面，输入代码块所使用的语言，实现代码高亮。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">publc <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String args[])</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"Hello Markdown"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| 表头 | 表头 | 表头 |  </span><br><span class="line">| --- | --- | --- |  </span><br><span class="line">| 内容 | 内容 | 内容 |  </span><br><span class="line">| 内容 | 内容 | 内容 |</span><br><span class="line">| 内容 | 内容 | 内容 |</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>表头</th>
-<th>表头</th>
-<th>表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内容</td>
-<td>内容</td>
-<td>内容</td>
-</tr>
-<tr>
-<td>内容</td>
-<td>内容</td>
-<td>内容</td>
-</tr>
-<tr>
-<td>内容</td>
-<td>内容</td>
-<td>内容</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="设置字体颜色"><a href="#设置字体颜色" class="headerlink" title="设置字体颜色"></a>设置字体颜色</h2><ul>
-<li><p>代码 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color=<span class="string">"red"</span>&gt;输出内容&lt;<span class="regexp">/font&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示<br><font color="brown">输出内容</font></p>
 </li>
 </ul>
-<hr>
-<h2 id="设置背景色"><a href="#设置背景色" class="headerlink" title="设置背景色"></a>设置背景色</h2><ul>
-<li><p>代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;<span class="xml"><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">brown</span>&gt;</span>背景色语法<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示：</p>
-<table><tr><td bgcolor="brown">背景色语法</td></tr></table>
+<h3 id="随机数据生成"><a href="#随机数据生成" class="headerlink" title="随机数据生成"></a>随机数据生成</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> [] generateRandomArray () &#123;</span><br><span class="line">	Random r = <span class="keyword">new</span> Random ();</span><br><span class="line">	<span class="keyword">int</span> [] arr = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">10000</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</span><br><span class="line">		arr [i] = r.nextInt(<span class="number">10000</span>);</span><br><span class="line">        <span class="comment">//生成10000个10000以内的随机数。</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<hr>
-<h2 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h2>
+<h3 id="对比验证"><a href="#对比验证" class="headerlink" title="对比验证"></a>对比验证</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">check</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> [] arr = generateRandomArray ();</span><br><span class="line">	<span class="keyword">int</span> [] arr2 = <span class="keyword">new</span> <span class="keyword">int</span> [arr.length];</span><br><span class="line">	System.arraycopy (arr, <span class="number">0</span>, arr2, <span class="number">0</span>, arr.length);</span><br><span class="line">	Arrays.sort (arr);</span><br><span class="line">	SelectionSort.selectSort(arr2) ;</span><br><span class="line">	<span class="keyword">boolean</span> same = <span class="keyword">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; arr2.length ; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr[i] != arr2[i])&#123;</span><br><span class="line">			same = <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>生成两个相同的数组，第一个用java中自带的排序算法进行一次排序，第二个用自己写的排序算法进行一次排序。分别对比排好顺序后，数组中每一个数。如果全部相同，返回true，否则返回false。</p>
+</blockquote>
+
       
 
       
@@ -286,7 +253,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">markdown语法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
         		</li>
       		
 		</ul>
@@ -342,7 +309,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/22/markdown语法/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/02/排序算法之选择排序/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -356,15 +323,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/22/使用hexo搭建博客/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/03/排序算法之冒泡排序/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          使用hexo搭建博客
+          排序算法之冒泡排序
         
       </div>
     </a>
   
+  
+    <a href="/2019/10/01/排序算法之基础概念/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">排序算法之基础概念</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -389,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语法简介"><span class="toc-number">1.</span> <span class="toc-text">语法简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#总体规则"><span class="toc-number">1.1.</span> <span class="toc-text">总体规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标题"><span class="toc-number">1.2.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本对齐方式"><span class="toc-number">1.3.</span> <span class="toc-text">文本对齐方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文本高亮"><span class="toc-number">1.4.</span> <span class="toc-text">文本高亮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#超链接"><span class="toc-number">1.5.</span> <span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片"><span class="toc-number">1.6.</span> <span class="toc-text">图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无序列表"><span class="toc-number">1.7.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有序列表"><span class="toc-number">1.8.</span> <span class="toc-text">有序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分割线"><span class="toc-number">1.9.</span> <span class="toc-text">分割线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码块"><span class="toc-number">1.10.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表格"><span class="toc-number">1.11.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置字体颜色"><span class="toc-number">1.12.</span> <span class="toc-text">设置字体颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置背景色"><span class="toc-number">1.13.</span> <span class="toc-text">设置背景色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#未完待续……"><span class="toc-number">1.14.</span> <span class="toc-text">未完待续……</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#选择排序"><span class="toc-number">1.</span> <span class="toc-text">选择排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何写算法程序："><span class="toc-number">2.</span> <span class="toc-text">如何写算法程序：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本思路"><span class="toc-number">2.1.</span> <span class="toc-text">基本思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体实现"><span class="toc-number">2.2.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间复杂度分析"><span class="toc-number">2.4.</span> <span class="toc-text">时间复杂度分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#稳定性"><span class="toc-number">2.5.</span> <span class="toc-text">稳定性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#验证算法-—-对数器"><span class="toc-number">3.</span> <span class="toc-text">验证算法 — 对数器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#随机数据生成"><span class="toc-number">3.0.1.</span> <span class="toc-text">随机数据生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对比验证"><span class="toc-number">3.0.2.</span> <span class="toc-text">对比验证</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

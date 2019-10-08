@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>排序算法之选择排序 | MyBlog</title>
+  <title>排序算法之归并排序 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="排序算法之选择排序">
-<meta property="og:url" content="http://yoursite.com/2019/10/03/排序算法之选择排序/index.html">
+  <meta name="description" content="归并排序">
+<meta name="keywords" content="排序算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法之归并排序">
+<meta property="og:url" content="http://yoursite.com/2019/10/05/排序算法之归并排序/index.html">
 <meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="归并排序">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-03T04:57:58.447Z">
+<meta property="og:updated_time" content="2019-10-06T14:29:58.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序算法之选择排序">
+<meta name="twitter:title" content="排序算法之归并排序">
+<meta name="twitter:description" content="归并排序">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -147,27 +151,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-排序算法之选择排序" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-排序算法之归并排序" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      排序算法之选择排序
+      排序算法之归并排序
     </h1>
   
 
         
-        <a href="/2019/10/03/排序算法之选择排序/" class="archive-article-date">
-  	<time datetime="2019-10-03T04:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
+        <a href="/2019/10/05/排序算法之归并排序/" class="archive-article-date">
+  	<time datetime="2019-10-05T14:30:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><a id="more"></a>
+<p align="right">根据马士兵老师算法课整理</p>
+
+<blockquote>
+<p>冒泡排序<br>时间复杂度：<font color="red">O(n log<sub>2</sub>n)</font><br>空间复杂度：<font color="red">n</font><br>稳定性：<font color="red">稳定 </font></p>
+</blockquote>
+<hr>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>一个方法在自身内部的执行过程中，调用自身。<br>同一段时间，同一段代码在执行，代码中的参数值，临时变量值不一样。递归中有一个条件，让程序停止返回，叫做basecase。</p>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>要对一个数组进行归并排序，要把数组分成两半。如果要对两个子数组进行归并，要求两个子数组是排好顺序的。如果子数组是无序的，子数组就要分成两半，然后对这两半进行归并。如果这两半内部也没有排好，子数组的子数组再分两半，一直分到不能分为止，即只有两个或一个元素。这是就可以返回了，如果两个子数组都返回了，那么上一级子数组口可以归并了。直到整个数组完全归并。  </p>
+<h2 id="先放一放"><a href="#先放一放" class="headerlink" title="先放一放"></a>先放一放</h2><p>LOADING…</p>
+
       
 
       
@@ -175,6 +189,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -225,7 +250,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/03/排序算法之选择排序/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/05/排序算法之归并排序/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -240,8 +265,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/10/01/排序算法之基础概念/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">排序算法之基础概念</div>
+    <a href="/2019/10/05/排序算法之希尔排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">排序算法之希尔排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -268,7 +293,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#归并排序"><span class="toc-number">1.</span> <span class="toc-text">归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归"><span class="toc-number">1.1.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本思路"><span class="toc-number">1.2.</span> <span class="toc-text">基本思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先放一放"><span class="toc-number">1.3.</span> <span class="toc-text">先放一放</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -384,11 +409,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
