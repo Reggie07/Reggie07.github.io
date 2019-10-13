@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JDBC  | MyBlog</title>
+  <title>JDBC(2) | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="JDBC ">
-<meta property="og:url" content="http://yoursite.com/2019/10/08/JDBC/index.html">
+  <meta name="description" content="事务">
+<meta name="keywords" content="JDBC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDBC(2)">
+<meta property="og:url" content="http://yoursite.com/2019/10/10/JDBC-2/index.html">
 <meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="事务">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-08T12:55:11.956Z">
+<meta property="og:updated_time" content="2019-10-13T12:52:22.285Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JDBC ">
+<meta name="twitter:title" content="JDBC(2)">
+<meta name="twitter:description" content="事务">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -147,27 +151,128 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JDBC" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JDBC-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JDBC 
+      JDBC(2)
     </h1>
   
 
         
-        <a href="/2019/10/08/JDBC/" class="archive-article-date">
-  	<time datetime="2019-10-08T12:55:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+        <a href="/2019/10/10/JDBC-2/" class="archive-article-date">
+  	<time datetime="2019-10-10T15:20:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><a id="more"></a>
+
+<p>一组要么同时执行成功，要么同时执行失败的SQL语句。是数据库操作的一个<font color="red">执行单元</font>。<br>事务开始于：   </p>
+<ul>
+<li>连接到一个数据库上，并执行一条DML语句(INSERT、UPDATE或DELETE)。</li>
+<li>前一个事务结束后，又输入了另一条DML语句。  </li>
+</ul>
+<p>事务结束于：  </p>
+<ul>
+<li>执行COMMIT或ROLLBACK语句。</li>
+<li>执行一条DDL语句，例如CREATE TABLE语句；在这总情况下，会自动执行一条COMMIT语句。</li>
+<li>执行一条DCL(用户权限操作)语句，例如GRANT语句；在这总情况下，自动执行一条COMMIT语句。</li>
+<li>断开与数据库的连接。</li>
+<li>执行了一条DML语句，该语句却失败了；在这种情况下，会为这个无效的DML语句执行ROLLBACK语句。</li>
+</ul>
+<h3 id="事务的四大特性"><a href="#事务的四大特性" class="headerlink" title="事务的四大特性"></a>事务的四大特性</h3><ul>
+<li><p>原子性(atomicity)  </p>
+<ul>
+<li>表示一个事务内的所有操作是一个整体，要么全部成功，要么全部失败。</li>
+</ul>
+</li>
+<li><p>一致性(consistency)</p>
+<ul>
+<li>表示一个事务内有一个操作失败时，所有的更改过的数据都必须回滚到修改前的状态。</li>
+</ul>
+</li>
+<li><p>隔离性(isolation)</p>
+<ul>
+<li>事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态。</li>
+<li><b><font color="orange">事务隔离级别从低到高</font></b>  <ul>
+<li>读取未提交</li>
+<li>读取已提交</li>
+<li>课重复读</li>
+<li>序列化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>持久性(durability)</p>
+<ul>
+<li>持久性事务完成之后，它对于系统的影响是永久的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="批处理Batch"><a href="#批处理Batch" class="headerlink" title="批处理Batch"></a>批处理Batch</h2><p>对于处理大量的批处理，建议使用Statement，因为PreparedStatement的预编译空间有限，当数据量特别大时，会发生异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">conn.setAutoCommit(<span class="keyword">false</span>);<span class="comment">//将事务设为手动提交</span></span><br><span class="line"><span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">stmt = conn.createStatement();			</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">200000</span>;i++)&#123;</span><br><span class="line">	stmt.addBatch(<span class="string">"insert into t_user (name, pwd,regTime) values ( '王"</span> + i + <span class="string">" ' , 666666 ,  now( ) )"</span>);<span class="comment">//增加批处理的SQL语句</span></span><br><span class="line">&#125;</span><br><span class="line">stmt.executeBatch();</span><br><span class="line">conn.commit();<span class="comment">//提交事务</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="时间类型"><a href="#时间类型" class="headerlink" title="时间类型"></a>时间类型</h2><p>有关时间类的内容在java.util.Date中。<br>时间的表示方式是从1970年1月1日，使用一个long类型的数来表示时间，单位是毫秒。可以表示到两亿年。<br>在数据库中<br>子类：java.sql.Date        表示年月日<br>子类：java.sql.Time        表示时分秒<br>子类：java.sql.Timestamp   表示年月日时分秒  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ps1=conn.prepareStatement(<span class="string">"insert into t_user(name,pwd,regTime,lastLogin)values(?,?,?,?)"</span>);</span><br><span class="line">ps1.setObject(<span class="number">1</span>, <span class="string">"xx"</span>);</span><br><span class="line">ps1.setObject(<span class="number">2</span>, <span class="string">"123456"</span>);		</span><br><span class="line"></span><br><span class="line">java.sql.Date date = <span class="keyword">new</span> java.sql.Date(System.currentTimeMillis());</span><br><span class="line">Timestamp stamp = <span class="keyword">new</span> Timestamp(System.currentTimeMillis());</span><br><span class="line"><span class="comment">//如果需要插入指定日期，可以使用Calendar、DateFormat</span></span><br><span class="line"></span><br><span class="line">ps1.setDate(<span class="number">3</span>, date);</span><br><span class="line">ps1.setTimestamp(<span class="number">4</span>, stamp);			</span><br><span class="line">ps1.execute();</span><br></pre></td></tr></table></figure>
+
+<p>将字符串代表的时间转换成long类型（时间）的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">str2Date</span><span class="params">(String dateStr)</span></span>&#123;</span><br><span class="line">	DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> format.parse(dateStr).getTime();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据时间查询数据库：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ps = conn.prepareStatement(<span class="string">"select * from t_user where regTime&gt;? and regTime&lt;?"</span>);		</span><br><span class="line"></span><br><span class="line">java.sql.Date start = <span class="keyword">new</span> java.sql.Date(str2Date(<span class="string">"2019-10-2 10:23:24"</span>));</span><br><span class="line">java.sql.Date end  =  <span class="keyword">new</span> java.sql.Date(str2Date(<span class="string">"2019-10-6 10:23:24"</span>));</span><br><span class="line"></span><br><span class="line">ps.setObject(<span class="number">1</span>,start);</span><br><span class="line">ps.setObject(<span class="number">2</span>, end);	</span><br><span class="line"></span><br><span class="line">rs = ps.executeQuery();	</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">	System.out.println(rs.getInt(<span class="number">1</span>)+<span class="string">"---"</span>+rs.getString(<span class="number">2</span>)+<span class="string">"---"</span>+rs.getTimestamp(<span class="number">4</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CLOB-Character-Large-Object"><a href="#CLOB-Character-Large-Object" class="headerlink" title="CLOB(Character Large Object)"></a>CLOB(Character Large Object)</h2><ul>
+<li>用于存储大量的文本数据（文章，小说）   </li>
+<li>大字段有些特殊，不同数据库的处理方式不一样，大字段的操作常常是以流的方式来处理的，而且非一般的字段，一次即可读出数据。  </li>
+<li>Mysql中相关的数据类型<ul>
+<li>TINYTEXT最大的长度为<font color="red">255</font>(2<sup>8</sup>-1)字符的text列。</li>
+<li>TEXT[(M)]最大的长度为<font color="red">65535</font>(2<sup>16</sup>-1)字符的text列。</li>
+<li>MEDIUMTEXT最大的长度为<font color="red">16777215</font>(2<sup>24</sup>-1)字符的text列。</li>
+<li>LONGTEXT最大的长度为<font color="red">4GB</font>(2<sup>32</sup>-1)字符的text列。  </li>
+</ul>
+</li>
+</ul>
+<h3 id="向数据库中写CLOB数据"><a href="#向数据库中写CLOB数据" class="headerlink" title="向数据库中写CLOB数据"></a>向数据库中写CLOB数据</h3><ul>
+<li><p>将程序中的字符串输入到CLOB中：要以流对象的形式输入。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps.setString(<span class="number">1</span>, <span class="string">"xx"</span>);</span><br><span class="line">ps.setClob(<span class="number">2</span>,<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(<span class="keyword">new</span> ByteArrayInputStream(<span class="string">"aaaabbbb"</span>.getBytes()))));<span class="comment">//内容要求是流对象</span></span><br><span class="line">ps.executeUpdate();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将文本中的内容输入到CLOB中（关于异常的处理，省略）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps.setString(<span class="number">1</span>, <span class="string">"xx"</span>);</span><br><span class="line">ps.setClob(<span class="number">2</span>, <span class="keyword">new</span> FileReader(<span class="keyword">new</span> File(<span class="string">"/Users/aaa/TestObjectIO.txt"</span>)));<span class="comment">//将文本文件内容直接输入到数据库中</span></span><br><span class="line">ps.executeUpdate();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="从数据库中读数据"><a href="#从数据库中读数据" class="headerlink" title="从数据库中读数据"></a>从数据库中读数据</h3><p>同样需要IO流的操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ps = conn.prepareStatement(<span class="string">"select * from t_user1 where id = ?"</span>);</span><br><span class="line">ps.setObject(<span class="number">1</span>, <span class="number">21036</span>);</span><br><span class="line">rs = ps.executeQuery();</span><br><span class="line"><span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">	Clob c = rs.getClob(<span class="string">"myInfo"</span>);</span><br><span class="line">	Reader r = c.getCharacterStream();</span><br><span class="line">	<span class="keyword">int</span> temp = <span class="number">0</span> ;</span><br><span class="line">	<span class="keyword">while</span> ((temp=r.read( ))!=-<span class="number">1</span>)&#123;</span><br><span class="line">		System.out.print((<span class="keyword">char</span>)temp);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="BLOB-Binary-Large-Object"><a href="#BLOB-Binary-Large-Object" class="headerlink" title="BLOB(Binary Large Object)"></a>BLOB(Binary Large Object)</h2><ul>
+<li>用于存储大量的二进制数据（视频、电影）</li>
+<li>大字段有些特殊，不同数据库的处理方式不一样，大字段的操作常常是以流的方式来处理的，而且非一般的字段，一次即可读出数据。</li>
+<li>Mysql中相关的数据类型<ul>
+<li>TINYBLOB最大的长度为<font color="red">255</font>(2<sup>8</sup>-1)字符的BLOB列。</li>
+<li>BLOB[(M)]最大的长度为<font color="red">65535</font>(2<sup>16</sup>-1)字符的BLOB列。</li>
+<li>MEDIUMBLOB最大的长度为<font color="red">16777215</font>(2<sup>24</sup>-1)字符的BLOB列。</li>
+<li>LONGBLOB最大的长度为<font color="red">4GB</font>(2<sup>32</sup>-1)字符的BLOB列。</li>
+</ul>
+</li>
+</ul>
+<h3 id="通过IO流，向数据库中插入图片"><a href="#通过IO流，向数据库中插入图片" class="headerlink" title="通过IO流，向数据库中插入图片"></a>通过IO流，向数据库中插入图片</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps = conn.prepareStatement(<span class="string">"insert into t_user1 ( name , headImg)value(?,?)"</span>);</span><br><span class="line">ps.setString(<span class="number">1</span>, <span class="string">"xx"</span>);</span><br><span class="line">ps.setBlob(<span class="number">2</span>, <span class="keyword">new</span> FileInputStream(<span class="string">"/Users/aaa/desktop/aa.png"</span>));</span><br><span class="line">ps.execute();</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过IO流，从数据库中读取图片"><a href="#通过IO流，从数据库中读取图片" class="headerlink" title="通过IO流，从数据库中读取图片"></a>通过IO流，从数据库中读取图片</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ps = conn.prepareStatement(<span class="string">"select * from t_user1 where id = ?"</span>);</span><br><span class="line">ps.setObject(<span class="number">1</span>, <span class="number">21038</span>);</span><br><span class="line">rs = ps.executeQuery();</span><br><span class="line"><span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">	Blob b = rs.getBlob(<span class="string">"headImg"</span>);</span><br><span class="line">	is = b.getBinaryStream();<span class="comment">//InputStream格式</span></span><br><span class="line">	os = <span class="keyword">new</span> FileOutputStream(<span class="string">"/Users/aaa/desktop/a.jpg"</span>);</span><br><span class="line">    <span class="comment">//文件读取到桌面		</span></span><br><span class="line">	<span class="keyword">int</span> temp = <span class="number">0</span> ;</span><br><span class="line">	<span class="keyword">while</span> ((temp=is.read( ))!=-<span class="number">1</span>)&#123;</span><br><span class="line">		os.write(temp);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="JDBC总结"><a href="#JDBC总结" class="headerlink" title="JDBC总结"></a>JDBC总结</h2><h2 id="使用资源文件存储数据库连接信息"><a href="#使用资源文件存储数据库连接信息" class="headerlink" title="使用资源文件存储数据库连接信息"></a>使用资源文件存储数据库连接信息</h2><p>JDBC工具类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBCUtil</span> </span>&#123;<span class="comment">//封装</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getMysqlConn</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//数据库连接方法</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Class.forName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);</span><br><span class="line">			<span class="keyword">return</span> DriverManager.getConnection(<span class="string">"jdbc:mysql://localhost:3306/testJDBC"</span>,<span class="string">"用户"</span>,<span class="string">"密码"</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(ResultSet rs,Statement ps, Connection conn)</span></span>&#123;</span><br><span class="line">        <span class="comment">//数据库关闭方法，根据用途，实现方法的重载</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(rs!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				rs.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(ps!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				ps.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(conn!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Statement ps, Connection conn)</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(ps!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				ps.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(conn!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Connection conn)</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(conn!=<span class="keyword">null</span>)&#123;</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">catch</span>(SQLException e)&#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数据库连接参数可以放在数据库配置文件中<br>src”右键” - - new - - file - - 取名”db.properities”<br>资源文件中每一行放一个参数，参数名和参数值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> Properties pros = <span class="keyword">null</span>;<span class="comment">//可以帮助读取和处理资源文件中的信息</span></span><br><span class="line"><span class="comment">//整个应用读一次就够了</span></span><br><span class="line"><span class="comment">//使用静态代码块</span></span><br><span class="line"><span class="keyword">static</span> &#123; <span class="comment">//加载JDBCUtil类的时候调用，近执行一次</span></span><br><span class="line">	pros= <span class="keyword">new</span> Properties();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">try</span> &#123;<span class="comment">//加载配置文件</span></span><br><span class="line">		pros.load(Thread.currentThread().getContextClassLoader().getResourceAsStream(<span class="string">"db.properties"</span>));</span><br><span class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getMysqlConn</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		Class.forName(pros.getProperty(<span class="string">"mysqlDriver"</span>));</span><br><span class="line">		<span class="keyword">return</span> DriverManager.getConnection(pros.getProperty(<span class="string">"mysqlURL"</span>),</span><br><span class="line">				pros.getProperty(<span class="string">"mysqlUser"</span>),pros.getProperty(<span class="string">"mysqlPwd"</span>));</span><br><span class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysqlDriver: com.mysql.cj.jdbc.Driver</span><br><span class="line">mysqlURL   : jdbc:mysql://localhost:3306/testJDBC</span><br><span class="line">mysqlUser  : root</span><br><span class="line">mysqlPwd   : 12345678</span><br></pre></td></tr></table></figure>
       
 
       
@@ -175,6 +280,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -225,7 +341,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/08/JDBC/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/10/JDBC-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -239,9 +355,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/10/13/JDBC-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JDBC(3)
+        
+      </div>
+    </a>
   
-    <a href="/2019/10/05/排序算法之归并排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">排序算法之归并排序</div>
+  
+    <a href="/2019/10/08/JDBC-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JDBC(1)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -268,7 +393,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#事务"><span class="toc-number">1.</span> <span class="toc-text">事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事务的四大特性"><span class="toc-number">1.1.</span> <span class="toc-text">事务的四大特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批处理Batch"><span class="toc-number">2.</span> <span class="toc-text">批处理Batch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间类型"><span class="toc-number">3.</span> <span class="toc-text">时间类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CLOB-Character-Large-Object"><span class="toc-number">4.</span> <span class="toc-text">CLOB(Character Large Object)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#向数据库中写CLOB数据"><span class="toc-number">4.1.</span> <span class="toc-text">向数据库中写CLOB数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从数据库中读数据"><span class="toc-number">4.2.</span> <span class="toc-text">从数据库中读数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BLOB-Binary-Large-Object"><span class="toc-number">5.</span> <span class="toc-text">BLOB(Binary Large Object)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过IO流，向数据库中插入图片"><span class="toc-number">5.1.</span> <span class="toc-text">通过IO流，向数据库中插入图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过IO流，从数据库中读取图片"><span class="toc-number">5.2.</span> <span class="toc-text">通过IO流，从数据库中读取图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC总结"><span class="toc-number">6.</span> <span class="toc-text">JDBC总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用资源文件存储数据库连接信息"><span class="toc-number">7.</span> <span class="toc-text">使用资源文件存储数据库连接信息</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -380,7 +505,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">markdown语法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -388,7 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">markdown语法</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
