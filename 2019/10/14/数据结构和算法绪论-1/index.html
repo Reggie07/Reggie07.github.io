@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JDBC(1) | MyBlog</title>
+  <title>数据结构和算法绪论（1） | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mysql">
-<meta name="keywords" content="JDBC">
+  <meta name="description" content="第一章  绪论（一）">
+<meta name="keywords" content="数据结构和算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JDBC(1)">
-<meta property="og:url" content="http://yoursite.com/2019/10/08/JDBC-1/index.html">
+<meta property="og:title" content="数据结构和算法绪论（1）">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/数据结构和算法绪论-1/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="Mysql">
+<meta property="og:description" content="第一章  绪论（一）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-13T14:54:24.352Z">
+<meta property="og:image" content="http://yoursite.com/assets/DSA/01A2-1.png">
+<meta property="og:updated_time" content="2019-10-18T09:50:38.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JDBC(1)">
-<meta name="twitter:description" content="Mysql">
+<meta name="twitter:title" content="数据结构和算法绪论（1）">
+<meta name="twitter:description" content="第一章  绪论（一）">
+<meta name="twitter:image" content="http://yoursite.com/assets/DSA/01A2-1.png">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -151,136 +153,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JDBC-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构和算法绪论-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JDBC(1)
+      数据结构和算法绪论（1）
     </h1>
   
 
         
-        <a href="/2019/10/08/JDBC-1/" class="archive-article-date">
-  	<time datetime="2019-10-08T12:55:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+        <a href="/2019/10/14/数据结构和算法绪论-1/" class="archive-article-date">
+  	<time datetime="2019-10-14T14:44:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><a id="more"></a>
-
+        <h1 id="第一章-绪论（一）"><a href="#第一章-绪论（一）" class="headerlink" title="第一章  绪论（一）"></a>第一章  绪论（一）</h1><a id="more"></a>
+<p>本章具体脉络：</p>
 <ul>
-<li>使用于所有的平台；  </li>
-<li>支持多线程，充分利用CPU资源，性能出色；  </li>
-<li>大数据处理，对于某次包含50000000个记录的数据库使用MySQL完全没问题。  </li>
+<li><b>什么是计算</b>：<font color="red">计算</font>是主要的研究对象、主要内容、主要目标。   </li>
+<li><b>评判DSA优劣的参照(直尺)</b>：怎么样才能构成一个好的计算，取决于使用的DSA的<font color="red">性能</font>，这样就出现了一个好坏的问题，如何给出一个参照，比较数据结构和算法的优劣。<font color="red">计算模型</font>。</li>
+<li><b>度量DSA性能的尺度(刻度)</b>：在一定精细度的情况下进行测度，<font color="red">渐进复杂度</font>。  </li>
+<li><b>DSA性能度量的方法</b>：如何运用这把尺子来度量一个东西。</li>
+<li><b>DSA的设计及其优化</b>：在知道DSA什么是好，什么是坏的情况下。如何来设计DSA，并对其进行优化。  </li>
+</ul>
+<p>拓展：</p>
+<ul>
+<li><b>理论模型与实际性能的差异</b>   </li>
+<li><b>DSA优化的极限(下界)</b>:我们可以尽可能的优化DSA，但是它总是有一个最后最后的极限，总有一个极限最低的复杂度（下界）。   </li>
 </ul>
 <hr>
-<h2 id="MySQL简单命令行操作"><a href="#MySQL简单命令行操作" class="headerlink" title="MySQL简单命令行操作"></a>MySQL简单命令行操作</h2><h3 id="MAC环境配置"><a href="#MAC环境配置" class="headerlink" title="MAC环境配置"></a>MAC环境配置</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vim .bash_profile</span><br><span class="line"><span class="comment"># 添加以下代码</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:/usr/<span class="built_in">local</span>/mysql/bin</span><br><span class="line"><span class="comment"># 退出后</span></span><br><span class="line"><span class="built_in">source</span> .bash_profile</span><br><span class="line"></span><br><span class="line">vim .zshrc</span><br><span class="line"><span class="comment"># 添加以下代码</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:/usr/<span class="built_in">local</span>/mysql/bin</span><br><span class="line"><span class="comment"># 退出后</span></span><br><span class="line"><span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure>
+<h2 id="A-计算"><a href="#A-计算" class="headerlink" title="(A)计算"></a>(A)计算</h2><h3 id="1-计算"><a href="#1-计算" class="headerlink" title="1.计算"></a>1.计算</h3><p>计算（计算机科学的研究对象和目的）：</p>
+<ul>
+<li>计算是直接研究对象：研究在计算过程中本质的<font color="orange">规律</font>，总结挖掘出其中一般性的<font color="orange">方法和技巧</font>。  </li>
+<li>最终研究目的、目标：实现<font color="orange">高效</font>计算，在资源消耗方面<font color="orange">低廉，低耗</font>。  </li>
+</ul>
+<p>Computer science should be called computing science, for the same reason why surgery is not called knife science.</p>
+<p align="right">- - - - E·Dijkstra</p>
 
-<h3 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h(IP地址) -u(账户名称) -p(密码)  -- 连接命令</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit   <span class="comment">--退出命令</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> mybd;                 <span class="comment">-- 创建数据库</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> mydb;                   <span class="comment">-- 卸载数据库</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;                       <span class="comment">-- 显示所有数据库</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> mydb;                             <span class="comment">-- 使用数据库</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;                          <span class="comment">-- 显示所有表</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;                          <span class="comment">-- 显示所有表</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">describe</span> t_user;                      <span class="comment">-- 显示表的内容，结构</span></span><br></pre></td></tr></table></figure>
-
-<p>还可以使用SQL语句对表进行增删改查等操作。</p>
+<blockquote>
+<p>子程序(子算法)：一个算法中，可能同时包含解决另一个相对更小的问题的一个算法。  </p>
+</blockquote>
 <hr>
-<h2 id="Navicat-for-MySQL的使用"><a href="#Navicat-for-MySQL的使用" class="headerlink" title="Navicat for MySQL的使用"></a>Navicat for MySQL的使用</h2><p>打开软件 - - - - 点击链接 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">输入连接名：    输入连接名  </span><br><span class="line">主机名或IP地址：localhost(本机)  </span><br><span class="line">端     口：    3336</span><br><span class="line">```  </span><br><span class="line">点击右键 - - 打开连接 - - 可以使用test数据库，也可以新建数据库   </span><br><span class="line">&gt; 可以手动建表格，添数据  </span><br><span class="line">&gt; 还可以使用JDBC  </span><br><span class="line">```SQL</span><br><span class="line">-- 注释语句</span><br></pre></td></tr></table></figure>
-
+<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
+<li>计算 = 信息处理  <ul>
+<li>借助某种工具，遵照一定规则，以明确、可兑现、简单而机械的形式进行的一系列简单的基本操作。</li>
+</ul>
+</li>
+<li>计算模型 = 计算机 = 信息处理工具  </li>
+<li>所谓算法，即特定计算模型下，旨在解决特定问题的指令序列<ul>
+<li>输入 待处理的信息（问题）  </li>
+<li>输出 经处理的信息（答案）  </li>
+<li>正确性 计算过程，计算方法的确可以解决指定的问题</li>
+<li>确定性 任一算法都可以描述为一个由基本操作组成的序列，每一个操作都是语义明确</li>
+<li>可行性 每一基本操作都可以实现，且在常数时间内完成</li>
+<li>有穷性 对于任何输入，经又穷次基本操作，都可以得到输出  </li>
+</ul>
+</li>
+</ul>
 <hr>
-<h2 id="什么是JDBC-Java-Database-Connection"><a href="#什么是JDBC-Java-Database-Connection" class="headerlink" title="什么是JDBC(Java Database Connection)"></a>什么是JDBC(Java Database Connection)</h2><p>sun公司官方为用户提供了编程接口，然后再由数据库厂商提供相关实现类。一般叫做<font color="red">数据库驱动</font>。</p>
-<h3 id="JDBC访问数据库流程"><a href="#JDBC访问数据库流程" class="headerlink" title="JDBC访问数据库流程"></a>JDBC访问数据库流程</h3><ol>
-<li>驱动管理器：加载JDBC驱动程序；  </li>
-<li>连接数据库，本质是<font color="red">Socket</font>连接；</li>
-<li>发送SQL语句；</li>
-<li>得到运行结果。</li>
-</ol>
-<h3 id="JDBC常用接口"><a href="#JDBC常用接口" class="headerlink" title="JDBC常用接口"></a>JDBC常用接口</h3><h4 id="Driver接口"><a href="#Driver接口" class="headerlink" title="Driver接口"></a>Driver接口</h4><p>Driver由数据库厂家提供，可以直接使用。<br>首先加载右键项目名称 - - Build Path - - Configure Build Path - - Libraries - - Add External JARs - - 导入驱动程序</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line"><span class="comment">//装载MySQL驱动</span></span><br><span class="line">Class.forName(<span class="string">"com.jdbc.driver.OracleDriver"</span>);</span><br><span class="line"><span class="comment">//装载Oracle驱动</span></span><br><span class="line">```  </span><br><span class="line">Class.forName通过传入的字符串(类的路径)，加载指定的类。</span><br><span class="line"></span><br><span class="line">#### DriverManager接口</span><br><span class="line"></span><br><span class="line">DriverManager是JDBC的管理层，用户和驱动程序之间的中介，通过DriverManager可以建立Connection对象。</span><br><span class="line"></span><br><span class="line">#### Connection接口</span><br><span class="line"></span><br><span class="line">Connection与特定数据库的连接，在连接的上下文中执行SQL语句，并返回结果。</span><br><span class="line">```java</span><br><span class="line">Connection con=DriverManager.getConnection(<span class="string">"jdbc:mysql://host:3306/database"</span>,<span class="string">"user"</span>,<span class="string">"password"</span>);</span><br><span class="line"><span class="comment">//连接MYSQL数据库</span></span><br><span class="line">Connection con=DriverManager.getConnection(<span class="string">"jdbc:oracle:thin:@host:port:database"</span>,<span class="string">"user"</span>,<span class="string">"password"</span>);</span><br><span class="line"><span class="comment">//连接ORACLE数据库</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-算法又穷性"><a href="#2-算法又穷性" class="headerlink" title="2.算法又穷性"></a>2.算法又穷性</h3><h4 id="（1）序列Hailstone-n-【冰雹】"><a href="#（1）序列Hailstone-n-【冰雹】" class="headerlink" title="（1）序列Hailstone(n)【冰雹】"></a>（1）序列Hailstone(n)【冰雹】</h4><p><img src="/assets/DSA/01A2-1.png" alt><br>Haistone(42) = { 42 , 21 , 64 , 32 , … , 1 }  </p>
+<blockquote>
+<p>java代码实现：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hailstone</span><span class="params">(<span class="keyword">int</span> n, List&lt;Integer&gt; l)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> length = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (n&lt;=<span class="number">1</span>)</span><br><span class="line">        l.add(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        l.add(n);</span><br><span class="line">        <span class="keyword">while</span>(n&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            n = ( n%<span class="number">2</span> ) == <span class="number">0</span>  ?  n / <span class="number">2</span> : <span class="number">3</span> * n +<span class="number">1</span> ;</span><br><span class="line">            l.add ( n ) ;</span><br><span class="line">            length++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(Integer i:l)&#123;</span><br><span class="line">        System.out.print(i+<span class="string">"   "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();</span><br><span class="line">    System.out.println(<span class="string">"hailstone序列的长度为："</span>+length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p><font color="red"><b>另</b></font>：在执行编写的时候出现这样一个错误：<br>java报错：Syntax error, insert “Dimensions” to complete ReferenceType<br>翻译：语法错误，插入“维度”以完成引用类型。<br>原因：泛型必须是包装类类型，不能是基本类型（包括基本类型的数组）。  </p>
+</blockquote>
+<blockquote>
+<p>对于任意的n，总有|Hailstone(n)| &lt; ∞ ？ 目前还没有结论。</p>
+</blockquote>
+<p><font color="red"><b>在数据结构和算法这门课程里面研究的问题是：在正确性、可行性、有穷性都基本确定之后，如何设计并且优化出更好的计算过程，和一个对应的数据结构，一个对应的算法。</b></font></p>
+<hr>
+<h3 id="3-好算法"><a href="#3-好算法" class="headerlink" title="3.好算法"></a>3.好算法</h3><p>什么是一个好的算法，好的计算过程？     </p>
 <ul>
-<li>连接对象内部包含了socket对象，是一个远程连接，比较耗时。  </li>
-<li>在真正开发中，为了提高效率，都会使用连接池来管理连接对象。 </li>
+<li>符合语法，能够编译，链接</li>
+<li>能够正确处理<font color="green">简单</font>的输入</li>
+<li>能够正确处理<font color="green">大规模</font>的输入</li>
+<li>能够正确处理<font color="green">一般性的</font>的输入</li>
+<li>能够正确处理<font color="green">退化的</font>的输入</li>
+<li>能够正确处理<font color="green">任意合法的</font>的输入  </li>
 </ul>
-<h4 id="Statement接口"><a href="#Statement接口" class="headerlink" title="Statement接口"></a>Statement接口</h4><p>用于执行静态SQL语句并返回它所生成结果的对象。</p>
-<ol>
-<li><b>Statement类</b>(语句)  </li>
-</ol>
+<p>健壮：能够辨别不合法的输入并做出适当的处理，而不致非正常退出。<br>可读：结构化 + 准确命名 + 注释 + ···<br><b><font color="red">效率：速度尽可能快；存储空间（资源）尽可能少。</font></b><br>Algorithms + Data Structure = Programs<br>( Algorithms + Data Structure ) * Efficiency = Computation<br>不是简单的堆砌，而是高效的融合。</p>
+<hr>
+<h2 id="B-计算模型"><a href="#B-计算模型" class="headerlink" title="(B)计算模型"></a>(B)计算模型</h2><p><b>如何度量算法的好坏？</b><br>To measure is to know. If you can not measure it, you can not improve it.</p>
+<p align="right">- - - Lord Kelvin</p>  
+
+<p>如果我们的使命是去理解这个世界的规律，那么最终的形式往往是体现为对这个世界的，对自然界的某一个侧面，或某一个锋面来进行有效的，尽可能准确的测量。<br>如果需要改进某样DSA，首先就要去测量。如果我们不知道他有多好，就无法改进提高。</p>
+<hr>
+<h3 id="1-算法分析"><a href="#1-算法分析" class="headerlink" title="1.算法分析"></a>1.算法分析</h3><h4 id="1-1-主要表现在两个方面："><a href="#1-1-主要表现在两个方面：" class="headerlink" title="1.1 主要表现在两个方面："></a>1.1 主要表现在两个方面：</h4><p>正确性：</p>
 <ul>
-<li><p>由<font color="red">createStatement</font>创建，用于发送简单的SQL语句。(不带参数的)  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Stamement stmt = conn.createStatement();</span><br><span class="line">String name = <span class="string">"赵达"</span>；<span class="comment">//可以作为参数传过来</span></span><br><span class="line">string sql = <span class="string">"insert into t_usr(name,pwd,regTime)</span></span><br><span class="line"><span class="string">          values('"</span>+name+<span class="string">"',1111,now())"</span>;</span><br><span class="line">stmt.execute(sql);</span><br></pre></td></tr></table></figure>
+<li>算法功能与问题要求一致？</li>
+<li>数学证明？···  </li>
+</ul>
+<p>成本：</p>
+<ul>
+<li>运行时间 + 所需存储空间</li>
+<li>如果关注一个DSA的时间成本，如何来度量？</li>
+<li>如果这种度量涉及到两个或两个以上的DSA，如何比较？</li>
+</ul>
+<h4 id="1-2-从建模开始："><a href="#1-2-从建模开始：" class="headerlink" title="1.2 从建模开始："></a>1.2 从建模开始：</h4><ul>
+<li>T<sub>A</sub>(P) = 算法A求解<font color="red">问题<b>实例P</b></font>的计算成本。  <blockquote>
+<p>意义不大，同样一个问题可能出现的实例非常非常多，所以我们不可能把目光放在一个一个具体的实例上，任何一个实例都可能出现一个以偏盖全的问题，无法认识到问题的整体概貌。</p>
+</blockquote>
 </li>
-<li><p>关于SQL注入  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String id = <span class="string">"5 or 1=1"</span>;  </span><br><span class="line">String sql = <span class="string">"delete from t_user where id=+id"</span>;</span><br></pre></td></tr></table></figure>
-
-<p>1=1 的值为true，5 or 1=1的值也为true，此语句执行完毕，数据库中的所有数据都被删除。<font color="red">非常危险</font>，SQL注入可以随意修改数据库。</p>
+</ul>
+<blockquote>
+<p>因此：如何归纳概括？ <font color="red">划分等价类</font>。<br>所以要对问题进行一定的粗分类，就某一类问题来分析计算成本。  </p>
+</blockquote>
+<p>问题实例的<font color="red">规模</font>，往往是决定计算成本的主要因素。<br>通常成正相关：<br>规模接近，计算成本也接近；规模扩大，计算成本也上升。</p>
+<h4 id="1-3-特定算法-不同实例："><a href="#1-3-特定算法-不同实例：" class="headerlink" title="1.3 特定算法 + 不同实例："></a>1.3 特定算法 + 不同实例：</h4><ul>
+<li>令T<sub>A</sub>(n) = 用算法A求解某一问题规模为n的<font color="red">一类实例</font>所需要的计算成本。  </li>
+<li>讨论特定算法A（及其对应的问题）时，简记为T(n)。</li>
+</ul>
+<p>然而，这一定义仍然有问题，同一问题等规模的不同实例，计算成本不尽相同，甚至有实质差别。  </p>
+<ul>
+<li>例如：在平面上的n个点中，找到所成三角形面积最小的三个点，以蛮力算法为例，最坏情况下需要枚举所有C(n,3)种组合。<br>如果运气好的话，一开始枚举出的三个点，正好是共线的。此时面积为0。这样就直接找到了这个问题的解。</li>
+</ul>
+<h4 id="1-4-最坏算法"><a href="#1-4-最坏算法" class="headerlink" title="1.4 最坏算法"></a>1.4 最坏算法</h4><p>既然如此，又该如何定义T(n)呢？</p>
+<ul>
+<li>取T(n) = max {T(p) <b>|</b> |p| = n }<br>T(n)的取值应该是在所有规模为n的问题实例中，将他们的计算成本进行总体，比较并且取出最大值。<br>即，在规模同为n的所有实例中，只应该关注算法的最坏（成本最高）的情况。  </li>
+</ul>
+<h4 id="1-5-特定问题-不同算法"><a href="#1-5-特定问题-不同算法" class="headerlink" title="1.5 特定问题 + 不同算法"></a>1.5 特定问题 + 不同算法</h4><p>同一问题通常有多重算法，如何评价其优劣？<br><font color="red">实验统计法</font>是最直接的方法，不能够准确反映出一个算法真正的效率。<br>因为实验统计总是不够充分的：  </p>
+<ul>
+<li>不同的算法，可能适应于不同<font color="red">规模</font>的输入；</li>
+<li>不同的算法，可能适用于不同<font color="red">类型</font>的输入；</li>
+<li>同一算法，可以有不同的<font color="red">程序员</font>、用不同的程序<font color="red">语言</font>、经不同的<font color="red">编译器</font>、使用不同的<font color="red">编译优化选项</font>实现。</li>
+<li>同一算法，可能实现并运行与不同的<font color="red">硬件体系结构、软件操作系统</font></li>
+</ul>
+<p>为了给出<font color="red">客观</font>的评判，需要抽象出一个<font color="red">理想</font>的平台或模型</p>
+<ul>
+<li>不再依赖于上述种种具体的因素</li>
+<li>从而直接准确地描述、测量并评价算法</li>
+</ul>
+<hr>
+<h3 id="2-图灵机模型-TM，Turing-Machine"><a href="#2-图灵机模型-TM，Turing-Machine" class="headerlink" title="2.图灵机模型(TM，Turing Machine)"></a>2.图灵机模型(TM，Turing Machine)</h3><p>图灵机模型的要键：  </p>
+<ul>
+<li>Tape 依次均匀地划分为单元格，个猪油某一字符，默认为<font color="red">‘#’</font></li>
+<li>所有的字符均来源与字符表Alphabet，字符表产长度有限。</li>
+<li>Head 读写头，总是对准某一单元格，并且可以读取和改写其中的字符，每经过一个节拍，可转向左侧或右侧的邻格。</li>
+<li>State TM总是处于有限种状态中的一种，每经过一个节拍，可(按照规则)转向另一种状态。</li>
+<li>Transition Function：（q，c；d，L/R，p）<ul>
+<li>若当前状态为q，且当前字符为c，则将当前字符改写为d；转向左侧或右侧的邻格；转入p状态；一旦转入特定的状态‘h’，则停机。</li>
+</ul>
 </li>
 </ul>
-<ol start="2">
-<li><b>PreparedStatement类</b> <font color="red">（用的最多）</font>  </li>
-</ol>
+<p>算法中的规范，大多数使用接口的形式表现出来。</p>
+<hr>
+<h3 id="3-RAM模型"><a href="#3-RAM模型" class="headerlink" title="3.RAM模型"></a>3.RAM模型</h3><h4 id="3-1-RAM-Random-Access-Machine"><a href="#3-1-RAM-Random-Access-Machine" class="headerlink" title="3.1 RAM(Random Access Machine)"></a>3.1 RAM(Random Access Machine)</h4><p>寄存器顺序编号，总数没有限制，空间无限（假设）  </p>
 <ul>
-<li><p>继承自<font color="red">Statement</font>接口，由<font color="red">prepareStatement</font>创建，用于发送含有一个或多个输入参数的sql语句。PrepareStatement对象比Statement对象的效率更高，并可以防止SQL注入。我们一般都用PrepareStatement。  </p>
+<li>R[0], R[1], R[2], R[3], ···  </li>
+</ul>
+<p>每一次基本操作仅需常数时间，循环及子程序本身非基本操作  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">R[<span class="number">1</span>] &lt;- c            <span class="comment">//常数c赋值给编号为i的寄存器</span></span><br><span class="line">R[i] &lt;- R[j]         <span class="comment">//把第j个寄存器中的数赋值给第i个寄存器中</span></span><br><span class="line">R[i] &lt;- R[R[j]]      <span class="comment">//间接赋值，取出编号j的寄存器中存放的整数值，并将这个整数作为一个编号，取出对应寄存器的数值，复制给第i个寄存器</span></span><br><span class="line">R[R[i]] &lt;- R[j]      <span class="comment">//同上</span></span><br><span class="line">R[i] &lt;- R[j] + R[k]</span><br><span class="line">R[i] &lt;- R[j] + R[k]</span><br><span class="line">IF R[i] = <span class="number">0</span> GOTO l   <span class="comment">//条件判断语句，转向语句</span></span><br><span class="line">IF R[i] &gt; <span class="number">0</span> GOTO l</span><br><span class="line">STOP                 <span class="comment">//停止语句，对等与图灵机中的’h‘语句</span></span><br></pre></td></tr></table></figure>
+
+<p>与TM模型一样，RAM模型也是一般计算工具测简化与抽象。<br>使我们可以独立于具体的平台，对算法的效率做出可信的比较与测评。<br>在这些模型中坐了一个转换的过程：</p>
+<ul>
+<li>算法的运行时间 ∝ 算法需要执行的基本操作次数。<br>将时间的统计问题啊转换为对次数的整体的求和估算问题。  </li>
+<li>T(n) = 算法为求解规模为n的问题，所需执行的基本操作次数。<br>可以忽略硬件环境等因素。</li>
+</ul>
+<h4 id="3-2-RAM实例"><a href="#3-2-RAM实例" class="headerlink" title="3.2 RAM实例"></a>3.2 RAM实例</h4><p>功能：向下去正的除法，c &gt;= 0 , d &lt; d<br> c/d向下取整数 = max{ x | d·x &lt;= c } = max{ x | d·x &lt; c+1 }<br>不超过c/d的最大整数：<br>等效表述：在所有那些与d相乘后，不大于c的整数x中的最大者。<br>在所有乘以d之后严格小于c+1的那些整数x中的最大者。<br>算法：  </p>
+<ul>
+<li>反复从R[0] = 1 + c中减去R[1] = d </li>
+<li>统计在下溢之前，所做减法的次数x。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>   R[<span class="number">3</span>] &lt;- <span class="number">1</span>              <span class="comment">// increment</span></span><br><span class="line"><span class="number">1</span>   R[<span class="number">0</span>] &lt;- R[<span class="number">0</span>] + R[<span class="number">3</span>]    <span class="comment">// c ++</span></span><br><span class="line"><span class="number">2</span>   R[<span class="number">0</span>] &lt;- R[<span class="number">0</span>] - R[<span class="number">1</span>]    <span class="comment">// c -= d</span></span><br><span class="line"><span class="number">3</span>   R[<span class="number">2</span>] &lt;- R[<span class="number">2</span>] + R[<span class="number">3</span>]    <span class="comment">// x ++</span></span><br><span class="line"><span class="number">4</span>   IF R[<span class="number">0</span>] &gt; <span class="number">0</span> GOTO <span class="number">2</span>     <span class="comment">// if c &gt; 0 goto 2</span></span><br><span class="line"><span class="number">5</span>   R[<span class="number">0</span>] &lt;- R[<span class="number">2</span>] - R[<span class="number">3</span>]    <span class="comment">// else x-- and</span></span><br><span class="line"><span class="number">6</span>   STOP                   <span class="comment">// return R[0] = x = c/d【向下取整】</span></span><br></pre></td></tr></table></figure>
+
 </li>
-<li><p>方法一</p>
-</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String sql=<span class="string">"insert into t_user(name,pwd)values(?,?)"</span>;</span><br><span class="line"><span class="comment">//问号是占位符，一个？代表一位，通过预处理机制，其他信息无法传入，可以防止sql注入</span></span><br><span class="line">PreparedStatement ps=conn.prepareStatement(sql);</span><br><span class="line">ps.setString(<span class="number">1</span>, <span class="string">"赵达"</span>); <span class="comment">//对应第一个问号，参数索引从1开始计算</span></span><br><span class="line">ps.setString(<span class="number">2</span>,<span class="string">"123456"</span>); <span class="comment">//对应第二个问号</span></span><br><span class="line">ps.setDate(<span class="number">3</span>,<span class="keyword">new</span> Date(System.currentTimeMillis()));</span><br><span class="line">ps.execute();</span><br></pre></td></tr></table></figure>
+<p>对于： c = 12, d = 5，具体过程见下表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Step   IR    R[0]   R[1]  R[2]  R[3]</span><br><span class="line">0      0     12     5     0     0</span><br><span class="line">1      1     ^      ^     ^     1</span><br><span class="line">2      2     13     ^     ^     ^</span><br><span class="line">3      3     8      ^     ^     ^</span><br><span class="line">4      4     ^      ^     1     ^</span><br><span class="line">5      2     ^      ^     ^     ^</span><br><span class="line">6      3     3      ^     ^     ^</span><br><span class="line">7      4     ^      ^     2     ^</span><br><span class="line">8      2     ^      ^     ^     ^</span><br><span class="line">9      3     0      ^     ^     ^</span><br><span class="line">10     4     ^      ^     3     ^</span><br><span class="line">11     5     ^      ^     ^     ^</span><br><span class="line">12     6     2      ^     ^     ^</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>方法二</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">"insert into t_user (name, pwd)values(?,?,?)"</span>;</span><br><span class="line">PreparedStatement ps = conn.prepareStatement(sql);</span><br><span class="line">ps.setObject(<span class="number">1</span>, <span class="string">"钱耳"</span>);   </span><br><span class="line">ps.setObject(<span class="number">2</span>, <span class="string">"123456"</span>);<span class="comment">//可以忽略数据类型</span></span><br><span class="line">ps.setObject(<span class="number">3</span>, <span class="string">""</span>);</span><br><span class="line">ps.execute();</span><br></pre></td></tr></table></figure>
-
-
-<ol start="3">
-<li><b>CallableStatement类</b></li>
-</ol>
-<ul>
-<li>继承自<font color="red">PreparedStatement</font>。由方法<font color="red">prePareCall</font>创建，由于调用存储过程。</li>
-</ul>
-<ol start="4">
-<li>常用的statement方法    </li>
-</ol>
-<ul>
-<li>execute(); 运行语句，有结果集时，返回true，反之，返回false。</li>
-<li>executeQuery();运行select语句，返回ResultSet结果集。</li>
-<li>executeUpdate();运行select/update/delete操作，返回更新的行数。</li>
-</ul>
-<h4 id="ResultSet接口"><a href="#ResultSet接口" class="headerlink" title="ResultSet接口"></a>ResultSet接口</h4><p>Statement执行SQL语句是返回ResultSet结果集。<br>ResultSet提供的检索不同类型字段的方法，常用的有：  </p>
-<ul>
-<li>getString(); 获得在数据库中是<font color="red">varchar，char</font>等数据类型的对象。</li>
-<li>getFloat(); 获得在数据库中是<font color="red">Float</font>类型的对象。</li>
-<li>getDate(); 获得在数据库中是<font color="red">Date</font>类型的对象。</li>
-<li>getBoolean(); 获得在数据库中是<font color="red">Boolean</font>类型的对象。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">String sql=<span class="string">"select id,name,pwd from t_user where id&gt;?"</span>;</span><br><span class="line">PreparedStatement ps = conn.prepareStatement(sql);</span><br><span class="line">ps.setObject(<span class="number">1</span>, <span class="number">2</span>);<span class="comment">//把id大于2的记录都取出来</span></span><br><span class="line">ResultSet rs = ps.executeQuery();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">  <span class="comment">//返回值为boolean类型，跳到下一条，当前位置有下一条，则返回true</span></span><br><span class="line">  <span class="comment">//遍历结果集中的所有数据</span></span><br><span class="line">System.out.println(rs.getInt(<span class="number">1</span>)+<span class="string">" - - - "</span>+rs.getString(<span class="number">2</span>)+<span class="string">" - - - "</span>+rs.getString(<span class="number">3</span>));</span><br><span class="line"><span class="comment">//System.out.println(rs.getObject(1)+" - - - "+rs.getObject(2)+" - - - "+rs.getObject(3));</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>依次关闭使用之对象及连接：ResultSet -&gt; Statement -&gt; Connection<br>关闭时要抛出异常，三个try-catch块要分开写。</p>
-<h2 id="错误分析"><a href="#错误分析" class="headerlink" title="错误分析"></a>错误分析</h2><p>在运行的过程中出现了几次错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Could not create connection to database server.</span><br><span class="line">不能够和数据库服务器创建连接</span><br></pre></td></tr></table></figure>
-
-<p>通过网上搜索是由于驱动程序的版本太低了，MYSQL版本是8.0.12，使用的版本驱动包的版本是5.1.25。重新下载新版本的驱动程序，问题解决，但是在这之前使用5.1.25，曾经成功过，具体内部原因不知道。<br>驱动程序下载地址： <a href="https://dev.mysql.com/downloads/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Loading class `com.mysql.jdbc.Driver&apos;. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver&apos;. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.</span><br></pre></td></tr></table></figure>
-
-<p>大概意思就是数据库驱动com.mysql.jdbc.Driver已经不用了，要换成新的驱动<font color="red">com.mysql.cj.jdbc.Driver</font>，修改之后，错误消失。</p>
+<blockquote>
+<p>同过着张表可以吧整个计算过程罗列出来，将整个计算过程所需要的计算成本转换成表的规模，高度。即行数，整个代码中，针对具体的某一示例，需要执行的一条一条语句。行的总数就是基本操作的次数。</p>
+</blockquote>
+<blockquote>
+<p>这种度量：清晰、精确、明确、客观、可比较、无歧义的  </p>
+</blockquote>
+<hr>
 
       
 
@@ -294,7 +348,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构和算法</a>
         		</li>
       		
 		</ul>
@@ -350,7 +404,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/08/JDBC-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/14/数据结构和算法绪论-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -364,18 +418,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/10/JDBC-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/17/数据结构和算法绪论-2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JDBC(2)
+          数据结构和算法绪论-2
         
       </div>
     </a>
   
   
-    <a href="/2019/10/05/排序算法之归并排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">排序算法之归并排序</div>
+    <a href="/2019/10/14/HashMap底层实现原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HashMap底层实现原理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -402,7 +456,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql"><span class="toc-number">1.</span> <span class="toc-text">Mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL简单命令行操作"><span class="toc-number">2.</span> <span class="toc-text">MySQL简单命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MAC环境配置"><span class="toc-number">2.1.</span> <span class="toc-text">MAC环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单命令"><span class="toc-number">2.2.</span> <span class="toc-text">简单命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Navicat-for-MySQL的使用"><span class="toc-number">3.</span> <span class="toc-text">Navicat for MySQL的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是JDBC-Java-Database-Connection"><span class="toc-number">4.</span> <span class="toc-text">什么是JDBC(Java Database Connection)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBC访问数据库流程"><span class="toc-number">4.1.</span> <span class="toc-text">JDBC访问数据库流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBC常用接口"><span class="toc-number">4.2.</span> <span class="toc-text">JDBC常用接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Driver接口"><span class="toc-number">4.2.1.</span> <span class="toc-text">Driver接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Statement接口"><span class="toc-number">4.2.2.</span> <span class="toc-text">Statement接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ResultSet接口"><span class="toc-number">4.2.3.</span> <span class="toc-text">ResultSet接口</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误分析"><span class="toc-number">5.</span> <span class="toc-text">错误分析</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-绪论（一）"><span class="toc-number">1.</span> <span class="toc-text">第一章  绪论（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-计算"><span class="toc-number">1.1.</span> <span class="toc-text">(A)计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-计算"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-算法又穷性"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.算法又穷性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#（1）序列Hailstone-n-【冰雹】"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">（1）序列Hailstone(n)【冰雹】</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-好算法"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.好算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-计算模型"><span class="toc-number">1.2.</span> <span class="toc-text">(B)计算模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-算法分析"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.算法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-主要表现在两个方面："><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.1 主要表现在两个方面：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-从建模开始："><span class="toc-number">1.2.1.2.</span> <span class="toc-text">1.2 从建模开始：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-特定算法-不同实例："><span class="toc-number">1.2.1.3.</span> <span class="toc-text">1.3 特定算法 + 不同实例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-最坏算法"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">1.4 最坏算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-特定问题-不同算法"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">1.5 特定问题 + 不同算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-图灵机模型-TM，Turing-Machine"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.图灵机模型(TM，Turing Machine)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RAM模型"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.RAM模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-RAM-Random-Access-Machine"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">3.1 RAM(Random Access Machine)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-RAM实例"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">3.2 RAM实例</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
