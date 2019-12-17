@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | MyBlog</title>
+  <title>数据结构和算法绪论(2) | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="MyBlog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/page/2/index.html">
+  <meta name="description" content="第一章  绪论（二）">
+<meta name="keywords" content="数据结构和算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构和算法绪论(2)">
+<meta property="og:url" content="http://yoursite.com/2019/10/16/数据结构和算法绪论-2/index.html">
 <meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="第一章  绪论（二）">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/数据结构和算法绪论-2/assets/DSA/01C1-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/数据结构和算法绪论-2/assets/DSA/01C1-2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/数据结构和算法绪论-2/assets/DSA/01C2-1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/数据结构和算法绪论-2/assets/DSA/01C3-1.png">
+<meta property="og:image" content="http://yoursite.com/assets/DSA/01D3-1.png">
+<meta property="og:image" content="http://yoursite.com/assets/DSA/01D3-2.png">
+<meta property="og:image" content="http://yoursite.com/assets/DSA/01D3-3.png">
+<meta property="og:image" content="http://yoursite.com/assets/DSA/01D3-4.png">
+<meta property="og:image" content="http://yoursite.com/assets/DSA/01D7-1.png">
+<meta property="og:updated_time" content="2019-10-21T01:57:35.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:title" content="数据结构和算法绪论(2)">
+<meta name="twitter:description" content="第一章  绪论（二）">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/16/数据结构和算法绪论-2/assets/DSA/01C1-1.png">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -146,177 +161,484 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数据结构和算法绪论-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构和算法绪论(2)
+    </h1>
+  
+
+        
+        <a href="/2019/10/16/数据结构和算法绪论-2/" class="archive-article-date">
+  	<time datetime="2019-10-16T15:32:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第一章-绪论（二）"><a href="#第一章-绪论（二）" class="headerlink" title="第一章  绪论（二）"></a>第一章  绪论（二）</h1><a id="more"></a>
+
+<blockquote>
+<p>计算模型好像是一把尺子，大O记好就好像是尺子上的刻度。  </p>
+</blockquote>
+<p><font color="red">然而，并不需要强调刻度的精细程度，而是在定性和定量之间达到一个适度的折中，在更短的时间内抓到DSA的主要方面。</font>  </p>
+<p>Mathematics is more in need of good natations than of new theorems.  </p>
+<p align="right">---Alan Turing</p>
+
+<blockquote>
+<p>对于数学而言，最最继续的，与其说是一个有一个新发现的定理，不如说是今早发现的，设计出来的更好的记号。  </p>
+</blockquote>
+<hr>
+<h2 id="C-大O记号"><a href="#C-大O记号" class="headerlink" title="(C)大O记号"></a>(C)大O记号</h2><h3 id="1-渐进分析：Big-O"><a href="#1-渐进分析：Big-O" class="headerlink" title="1. 渐进分析：Big O"></a>1. 渐进分析：Big O</h3><blockquote>
+<p>提问：随着问题规模的增长，计算成本如何增长？  </p>
+</blockquote>
+<p>这里更关心的是<font color="red"><b>足够大</b></font>的问题，注重考察成本的总体增长趋势。  </p>
+<blockquote>
+<p>渐进分析：在问题规模足够大后，计算成本如何增长？  </p>
+</blockquote>
+<p>Asymptotic analysis : 当你&gt;&gt;2后，对于规模为n输入,算法   </p>
+<ul>
+<li>需要执行的基本操作次数：T（n）= ？</li>
+<li>需要占用的存储单元数目：S（n）= ？<font color="green">//通常可不考虑，为什么？</font></li>
+</ul>
+<p><img src="assets/DSA/01C1-1.png" alt></p>
+<p>大O记号（big O notation）<br>T(n) = O(f(n)) 充要条件 存在c &gt; 0，当n &gt;&gt; 2后，有T(n) &lt; c·f（n） </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">T（n）= &#123;<span class="number">5</span>n·[<span class="number">3</span>n·(n+<span class="number">2</span>)+<span class="number">4</span>]+<span class="number">6</span>&#125;^<span class="number">0.5</span></span><br><span class="line">     &lt; [<span class="number">5</span>n·(<span class="number">6</span>n^<span class="number">2</span>+<span class="number">4</span>)+<span class="number">6</span>]^<span class="number">0.5</span>     <span class="comment">//放大，用n替换2</span></span><br><span class="line">	 &lt; (<span class="number">35</span>n^<span class="number">3</span>+<span class="number">6</span>)^<span class="number">0.5</span>           <span class="comment">//放大，用n^2替换4</span></span><br><span class="line">	 &lt; <span class="number">6</span>·n^<span class="number">1.5</span>                 <span class="comment">//放大，用n^3替换6</span></span><br><span class="line">	 = O(n^<span class="number">1.5</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>因为n&gt;&gt;2，所以n<sup>2</sup>&gt;&gt;4，n<sup>3</sup>&gt;&gt;4。</p>
+</blockquote>
+<p>与T(n)相比，f(n)更为简洁，但依然反映前者的增长趋势。  </p>
+<ul>
+<li>常系数可忽略：O (<font color="orange">c</font>·f(n)) = O(f(n))   </li>
+<li>低次项可忽略：O(n<sup>a</sup> + n<sup>b</sup>) = O(n<sup>a</sup>)， a&gt;b&gt;0<br><img src="assets/DSA/01C1-2.png" alt></li>
+</ul>
+<p>由图可知:</p>
+<ul>
+<li>bigO的定义可以理解为在上方给出了T(n)时间复杂度的一个上界，也可以理解为bigO是对T(n)的一个悲观估计。</li>
+<li>在n的规模比较小的规模区域内，二者大小未定。</li>
+</ul>
+<hr>
+<h3 id="2-渐进分析：其它记号"><a href="#2-渐进分析：其它记号" class="headerlink" title="2. 渐进分析：其它记号"></a>2. 渐进分析：其它记号</h3><h4 id="2-1-bigΩ和bigθ"><a href="#2-1-bigΩ和bigθ" class="headerlink" title="2.1 bigΩ和bigθ"></a>2.1 bigΩ和bigθ</h4><p><img src="assets/DSA/01C2-1.png" alt></p>
+<blockquote>
+<p>T(n) = Ω(f(n))：存在 c &gt; 0，当 n &gt;&gt; 2后，有T(n) &gt; c·f(n)<br>往往是算法最好的情况  </p>
+</blockquote>
+<blockquote>
+<p>T(n) = θ(f(n))：存在c1 &gt; c2 &gt; 0，当n &gt;&gt; 2后，<br>有c1·f(n) &gt; T(n) &gt; c1·f(n)</p>
+</blockquote>
+<p>在更多的情况下，从悲观的角度分析。bigO用的最多，只有在特定的情况下才会讨论bigΩ和bigθ。</p>
+<h4 id="2-2-常数复杂度O-1"><a href="#2-2-常数复杂度O-1" class="headerlink" title="2.2 常数复杂度O(1)"></a>2.2 常数复杂度O(1)</h4><p>常数（constant function）<br>2 = 2013 = 2013·2013 = O(1)，甚至2013<sup>2013</sup>=O(1)//含RAM的基本操作。   </p>
+<blockquote>
+<p>这类算法效率最高。  </p>
+</blockquote>
+<p>什么样的代码段对应于常数执行时间？<br>具体问题具体分析。</p>
+<h4 id="2-3-对数复杂度O-logcn"><a href="#2-3-对数复杂度O-logcn" class="headerlink" title="2.3 对数复杂度O(logcn)"></a>2.3 对数复杂度O(log<sup>c</sup>n)</h4><blockquote>
+<p>ln n &nbsp;|&nbsp; lg n &nbsp;|&nbsp; log<sub>100</sub>n &nbsp;|&nbsp; log<sub>2013</sub>n    </p>
+</blockquote>
+<ul>
+<li><p>对于常数底数来说是无所谓的。<br>对任意a，b &gt; 0，log<sub>a</sub>n = <font color="red">log<sub>a</sub>b</font> · log<sub>b</sub>n = O（log<sub>b</sub>n）<br>log<sub>a</sub>b 为常数。可忽略。<br>所以log<sub> a </sub> n = log<sub> b </sub> n，a与b没有影响。  </p>
+</li>
+<li><p>对于常数次幂无所谓<br>对任意 c &gt; 0，logn<sup>c</sup> = c·logn = O(logn)  </p>
+</li>
+<li><p>对数多项式 (ploy-log function)<br>123·log <sup>321</sup> n + log <sup>105</sup> ( n<sup>2</sup> - n + 1 ) = O ( log <sup>321</sup> n )  </p>
+</li>
+<li><p>这类算法非常有效，复杂度无限接近于常数<br>对任意 c &gt; 0，logn = O ( n<sup>c</sup> )   </p>
+</li>
+</ul>
+<h4 id="2-4-多项式复杂度-polynomial-function"><a href="#2-4-多项式复杂度-polynomial-function" class="headerlink" title="2.4 多项式复杂度 (polynomial function)"></a>2.4 多项式复杂度 (polynomial function)</h4><p>100n + 200 = O ( n )<br>( 200n - 500 ) · ( 20n<sup>2</sup> - 300n + 2013 ) = O ( n · n<sup>2</sup> ) = O ( n )<br>一般的：a <sub>k</sub> n <sup>k</sup> + a <sub> k-1 </sub> n <sup>k-1</sup> + ··· + a <sub>1</sub> n + a <sub>0</sub> = O ( n <sup>k</sup>) , a <sub>k</sub> &gt; 0<br>多项式复杂度为最高次。</p>
+<blockquote>
+<p>另:线性复杂度：所有O(n)类函数<br>目前考虑的大部分问题复杂度都在O(n)到O(n<sup>2</sup>)  </p>
+</blockquote>
+<p>幂：[ ( n<sup>2013</sup> - 24n<sup>2009</sup> ) <sup>1/3</sup> + 512n<sup>567</sup> -1978n<sup>123</sup> ] <sup>1/11</sup> = O (n<sup>61</sup>)  </p>
+<hr>
+<h3 id="3-复杂度总结"><a href="#3-复杂度总结" class="headerlink" title="3. 复杂度总结"></a>3. 复杂度总结</h3><h4 id="3-1-指数复杂度-exponential-function"><a href="#3-1-指数复杂度-exponential-function" class="headerlink" title="3.1 指数复杂度(exponential function)"></a>3.1 指数复杂度(exponential function)</h4><p>T(n) = a<sup>n</sup></p>
+<blockquote>
+<p>这类算法的计算成本增长极快，通常被认为不可忍受。  </p>
+</blockquote>
+<p>从O ( n<sup>c</sup> ) 到O ( 2<sup>n</sup> ) ，是<font color="red">有效算法</font>到<font color="red">无效算法</font>的分水岭。  </p>
+<ul>
+<li>很多问题的O ( 2<sup>n</sup> )算法往往显而易见；<ul>
+<li>然而，设计出O ( n<sup>c</sup> )算法却极其不易；<ul>
+<li>甚至，有时注定只能是徒劳无功。  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>【问题描述】<br>S包含n个正整数，∑ S = 2m<br>S是否有子集T，满足 ∑ T = ∑ s \ T = m ？<br>n个整数能否被分为两部分，元素个数可能不同，但总和都是各自为m。</p>
+<p>【选举人制】<br>各州议会选出的选举人投票而不是由选民直接投票<br>50个州加1个特区，每一个区各自有各自的选举人票数。在选举过程中，每一个州都要做各自的独立统计，如果某一个选举人在对应的某一个州中获胜，这个州中所有的选举人票，都会归入这个候选人名下，统计全国共538票。即如果两个人竞选总统，如果获得270张选举人票，即可当选。  </p>
+<blockquote>
+<p>考虑会不会出现这种情况，两位候选人恰好各得269票？   </p>
+<ul>
+<li>直觉算法：逐一枚举S的每个子集，并统计元素的总和。  <ul>
+<li>定理：| 2<sup>5</sup> | = 2 <sup>|5|</sup> = 2<sup>n</sup>  </li>
+<li>也就是说：直觉算法需要迭代2<sup>n</sup>轮，并(在最坏情况下)至少需要花费这么多时间。不理想！！！  </li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>而且，就目前的计算模型而言，不存在可在多项式时间内回答此问题的算法。  </p>
+<h4 id="3-2-总结"><a href="#3-2-总结" class="headerlink" title="3.2 总结"></a>3.2 总结</h4><p><img src="assets/DSA/01C3-1.png" alt><br>增长速度：2<sup>n</sup> &gt; n<sup>3</sup> &gt; n<sup>2</sup> &gt; nlogn &gt; n sqrt(n) &gt; log n   </p>
+<hr>
+<h2 id="D-算法分析"><a href="#D-算法分析" class="headerlink" title="(D) 算法分析"></a>(D) 算法分析</h2><p><font color="red">通过以基本的计算模型作为参照，并且以大O记号的形式在上面加上适当的刻度，已经建立了一套对DSA进行分析的完整的工具和体系。</font><br>如何运用这种工具对DSA进行分析？去粗存精    </p>
+<blockquote>
+<p>要像呼吸一样对这套工具运用自如。  </p>
+</blockquote>
+<h3 id="1-算法分析"><a href="#1-算法分析" class="headerlink" title="1. 算法分析"></a>1. 算法分析</h3><p>主要两个任务 = 正确性 (不变性 * 单调性) + 复杂度</p>
+<ul>
+<li>为确定后者，是否需要将算法描述为RAM的基本指令，再统计累计的执行次数？<br>不必！&lt;渐进复杂度&gt;  </li>
+</ul>
+<p>c++等高级语言的<font color="red">基本指令</font>，均等效于常数条RAM的<font color="red">基本指令</font>；在渐进意义下，二者大体相同：  </p>
+<ul>
+<li>分支转向：goto //算法的灵魂；出于结构化考虑，被隐藏了。  </li>
+<li>迭代循环：for()、while()、··· //本质上就是“if + goto”。   </li>
+<li>调用 + 递归(自我调用)  //本质上也是goto</li>
+</ul>
+<p>复杂度分析的主要方法：</p>
+<ul>
+<li>迭代：级数求和</li>
+<li>递归：递归跟踪 + 递推方程</li>
+<li>猜测 + 验证</li>
+</ul>
+<hr>
+<h3 id="2-级数"><a href="#2-级数" class="headerlink" title="2. 级数"></a>2. 级数</h3><p><font color="red">算术</font>级数：与<font color="red">末项平方</font>同阶  </p>
+<ul>
+<li>T(n) = 1 + 2 + ··· + n = n ( n + 1 ) / 2 = O ( n<sup>2</sup> )</li>
+</ul>
+<p><font color="red">幂级</font>级数：比幂次高出<font color="red">一阶</font>  </p>
+<ul>
+<li>T<sub>2</sub>(n) = 1<sup>2</sup> + 2<sup>2</sup> + 3<sup>2</sup> + ··· + n<sup>2</sup> = n ( n + 1 ) ( 2n + 1 ) = O(n<sup>3</sup>)  </li>
+<li>T<sub>3</sub>(n) = 1<sup>3</sup> + 2<sup>3</sup> + 3<sup>3</sup> + ··· + n<sup>3</sup> = n<sup>2</sup> ( n + 1 )<sup>2</sup> / 4 = O(n<sup>4</sup>)  </li>
+<li>T<sub>4</sub>(n) = 1<sup>4</sup> + 2<sup>4</sup> + 3<sup>4</sup> + ··· + n<sup>4</sup> = n ( n + 1 ) ( 2n + 1 ) = O(n<sup>5</sup>)  </li>
+</ul>
+<p><font color="red">几何</font>级数 ( a &gt; 1 ) ：与<font color="red">末项</font>同阶</p>
+<ul>
+<li>T<sub>a</sub> ( n ) = a<sup>0</sup> + a<sup>1</sup> + ··· + a<sup>n</sup> = ( a<sup>n+1</sup> - 1 ) / ( a - 1 ) = O ( a<sup>n</sup> )<br>1 + 2 + 4 + ··· + 2<sup>n</sup> = 2<sup>n+1</sup> - 1 = O ( 2<sup>n+1</sup> ) = O ( 2<sup>n</sup> )</li>
+</ul>
+<p><font color="red">收敛</font>级数  </p>
+<ul>
+<li>1 / 1 / 2 + 1 / 2 / 3 + 1 / 3 / 4 + ··· + 1 / ( n - 1 ) / n = 1 - 1 / n = O ( 1 )  </li>
+<li>1 + 1 / 2<sup>n</sup> + ··· + 1 / n<sup>2</sup> &lt; 1 + 1 / 2<sup>2</sup> + ··· = π<sup>2</sup> / 6 = O ( 1 )  </li>
+<li>1 / 3 + 1 / 7 + 1 / 8 + 1 / 15 + 1 / 24 + 1 / 26 + 1 / 31 + 1 / 35 + ··· = 1 = O ( 1 )  </li>
+</ul>
+<p>每一项都有可能是分数的级数，有必要讨论和应用吗？<br>所讨论的基本操作的次数，基本单元数，不可能是<font color="red">分数</font>啊！<br><font color="red">【实例】</font>：假设某段代码的迭代循环可以等效的描述为硬币的投掷过程，这枚硬币投掷为正面的概率为λ( 0 &lt; λ &lt; 1 )，反过来投中反面的概率为1 - λ，程序的执行效果等效于不断地投掷这枚硬币，一直到第一次出现反面。算法的复杂度取决于整个过程中投掷了多少次硬币。<font color="red">情况各不相同</font>。  </p>
+<blockquote>
+<p>( 1 - λ ) · [ 1 + 2λ + 3λ<sup>2</sup> + 4λ<sup>3</sup> + ··· ] = 1 / (1-λ) = O ( 1 ) , 0 &lt; λ &lt; 1      </p>
+</blockquote>
+<p align="right">//几何分布</p>
+
+<p>有一类级数，可能未必收敛，然而长度有限<br>h(n) = 1 + 1/2 + 1/3 + ··· + 1/n = O(logn)  调和级数<br>log1 + log2 + log3 + … +logn = <font color="red">log(n!)</font> = O(nlogn) 对数级数<br>荐读：《Concrete Mathematics》</p>
+<hr>
+<h3 id="3-循环与级数"><a href="#3-循环与级数" class="headerlink" title="3. 循环与级数"></a>3. 循环与级数</h3><html>
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td colspan="3"> 实例一：</td>
+        </tr>
+        <tr>
+            <td width="30%">   
+                <p align="left">for ( int i = 0; i < n; i ++ )</p><p>
+                </p><p align="left"> &emsp; for ( int j = 0; j < n; j ++ )</p>
+                <p align="left"> &emsp;&emsp;Operation ( i , j ) ;</p>
+            </td>
+            <td width="25%">
+                <p align="left">算术级数：</p>
+                <p align="center">n · n = O ( n<sup>2</sup> )</p>
+            </td>
+            <td width="25%">
+                <img src="/assets/DSA/01D3-1.png" , width="350px" align="center">
+            </td>
+        </tr>
+    </table>
+</html>
+
+<html>
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td colspan="3"> 实例二： </td>
+        </tr>
+        <tr>
+            <td width="30%">   
+                <p align="left">for ( int i = 0; i < n; i ++ )</p><p>
+                </p><p align="left"> &emsp; for ( int j = 0; j < i; j ++ )</p>
+                <p align="left"> &emsp;&emsp;Operation ( i , j ) ;</p>
+            </td>
+            <td width="25%">
+                <p align="left">算术级数：</p>
+                <p align="center">n ·(n-1)/2 = O ( n<sup>2</sup> )</p>
+            </td>
+            <td width="25%">
+                <img src="/assets/DSA/01D3-2.png" , width="350px" align="center">
+            </td>
+        </tr>
+    </table>
+</html>
+
+<html>
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td colspan="3"> 实例三： </td>
+        </tr>
+        <tr>
+            <td width="30%">   
+                <p align="left">for ( int i = 0; i < n; i ++ )</p><p>
+                </p><p align="left"> &emsp; for ( int j = 0; j < i; j += 2013 )</p>
+                <p align="left"> &emsp;&emsp;Operation ( i , j ) ;</p>
+            </td>
+            <td width="25%">
+                <p align="left">算术级数：</p>
+                <p align="center"> O ( n<sup>2</sup> )</p>
+            </td>
+            <td width="25%">
+                <img src="/assets/DSA/01D3-3.png" , width="350px" align="center">
+            </td>
+        </tr>
+    </table>
+</html>
+
+<html>
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td colspan="3"> 实例四： </td>
+        </tr>
+        <tr>
+            <td width="30%">   
+                <p align="left">for ( int i = 0; i < n; i <<= 1 )<p>
+                <p align="left"> &emsp; for ( int j = 0; j < i; j += 2013 )</p>
+                <p align="left"> &emsp;&emsp;Operation ( i , j ) ;</p>
+            </=></p></td>
+            <td width="25%">
+                <p align="left">几何级数：</p>
+                <p align="left"> 1+2+4+···+2<sup>[log<sub>2</sub>(n-1)]向下取整</sup></p>
+                <p align="left">= 2<sup>[log<sub>2</sub>n] 向上取整</sup>-1</p>
+                <p align="left">= O(n)</p>
+            </td>
+            <td width="25%">
+                <img src="/assets/DSA/01D3-4.png" , width="350px" align="center">    
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">说明：此时n=128，面积等于时间复杂度，为2n。</td>
+        </tr>
+    </table>
+</html>
+
+<hr>
+<h3 id="4-取非极端元素、冒泡排序"><a href="#4-取非极端元素、冒泡排序" class="headerlink" title="4. 取非极端元素、冒泡排序"></a>4. 取非极端元素、冒泡排序</h3><h4 id="4-1-取非极端元素"><a href="#4-1-取非极端元素" class="headerlink" title="4.1 取非极端元素"></a>4.1 取非极端元素</h4><p><font color="red">算术方法也可推广到一般性的算法。</font><br>【问题实例】  </p>
+<ul>
+<li>给定整数<font color="red">子集</font>S，|S| = n &gt;= 3  </li>
+<li>找出元素 a ∈ S, a != max(S) 且 a != min(S)。</li>
+</ul>
+<p>【算法】  </p>
+<ul>
+<li>从S中任取三个元素 { x , y , z } ；  <ul>
+<li><font color="green">//若s以数组的形式给出，不妨取前三个；</font></li>
+<li><font color="green">//由于S是集合，这三个元素必<font color="red">互异</font></font>  </li>
+</ul>
+</li>
+<li>确定并排除其中最大，最下者；  <ul>
+<li><font color="red">//不妨设 x = max { x , y , z } , y = min { x , y , z }  </font></li>
+</ul>
+</li>
+<li>输出剩下的元素z。<blockquote>
+<p>无论输出规模n多大，上述算法需要的执行时间都不变<br>T(n) = 常数 = O(1) = Ω(1) = θ(1)  </p>
+</blockquote>
+</li>
+</ul>
+<h4 id="4-2-起泡排序"><a href="#4-2-起泡排序" class="headerlink" title="4.2 起泡排序"></a>4.2 起泡排序</h4><blockquote>
+<p>给定n个整数，将他们按<font color="red">非降序</font>排列    </p>
+</blockquote>
+<ul>
+<li><p>【思路】</p>
+<ul>
+<li>在<font color="red">有序</font>序列中，<font color="red">任意</font>相邻一对元素<font color="red">顺序</font></li>
+<li>在<font color="red">无序</font>序列中，<font color="red">总有</font>一对相邻元素<font color="red">逆序</font>  </li>
+</ul>
+</li>
+<li><p>扫描交换：  </p>
+<ul>
+<li>依次比较每一对相邻元素，如有必要，进行交换  </li>
+<li>若整趟扫描都没有进行交换，则排序完成；否则，再做一趟交换  </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> a [])</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = a.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">boolean</span> sorted = <span class="keyword">false</span> ; sorted = !sorted; n--)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>  ; i &lt; n ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i]&lt;a[i-<span class="number">1</span>])&#123;</span><br><span class="line">                swap(a, i, i-<span class="number">1</span>);</span><br><span class="line">                sorted = <span class="keyword">false</span>;<span class="comment">//清除全局有序标志</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关于for(boolean sorted = false; sorted = !sorted; n –)：<br>首先设定sorted是false，数组是无序的；<br>sorted = !sorted; sorted变成了true，当sorted为true时；<br>进入循环，执行语句；<br>当没有发现逆序的相邻元素时，不进行交换操作，此时sorted的值为true；<br>sorted = !sorted; sorted变成了false，跳出循环。</p>
+<hr>
+<h3 id="5-起泡排序的分析"><a href="#5-起泡排序的分析" class="headerlink" title="5. 起泡排序的分析"></a>5. 起泡排序的分析</h3><p>【问题】该算法是否必然会结束？至少需迭代多少趟？<br><font color="red">不变性</font>：经过<font color="red">k</font>轮扫描交换(外循环)后，最大的<font color="red">k</font>个元素必然就位。<br><font color="red">单调性</font>：经过<font color="red">k</font>轮扫描交换(外循环)后，问题实质的等效规模缩减至<font color="red">n-k</font>。<br><font color="red">正确性</font>：经过至多<font color="red">n</font>趟扫描后，算法必然终止，且能给出正确答案。  </p>
+<blockquote>
+<p>经过挖掘并且综合算法所具有的不变性和单调性，进而证明正确性的方法，是算法分析中的一个基本而重要的技巧。</p>
+</blockquote>
+<hr>
+<h3 id="6-封底估算"><a href="#6-封底估算" class="headerlink" title="6. 封底估算"></a>6. 封底估算</h3><p>Big（O）大O记号是<font color="red">定性</font>估计的方法。<br><font color="red">定量</font>估算：Back-Of-The-Envelope Calculation(封底估算)<br>在头脑中<font color="red">抓住问题的主要方面</font>，就可以很快的出一个足够近似的估计。  </p>
+<hr>
+<h3 id="7-封底估算实例"><a href="#7-封底估算实例" class="headerlink" title="7. 封底估算实例"></a>7. 封底估算实例</h3><ul>
+<li>对时间量建立起概念。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1day = 24h * 60min * 60sec ≈ 25 * 4000 = 10^5 sec</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1世纪 = 100y * 365 = 300 * 100day = 3 * 10^9 sec</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">三生三世 = 300y = 10^10 = (1 googel)^(1/10) sec</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>三生三世中的一天，相当于一天中的一秒。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">宇宙大爆炸至今 = 10^21 = 10 * (10^10)^2 sec</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>宇宙声明中的三生三世，相当于三生三世中的0.1秒。  </p>
+</blockquote>
+<p>【实例】<br>考察对全国人口普查数据排序。<br>n = 10 <sup>9</sup>  </p>
+<blockquote>
+<p>硬件改进与算法改进！</p>
+</blockquote>
+<p><img src="/assets/DSA/01D7-1.png" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/04/排序算法之插入排序/" class="archive-article-date">
-  	<time datetime="2019-10-04T13:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/04/排序算法之插入排序/">排序算法之插入排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构和算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/16/数据结构和算法绪论-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/排序算法之冒泡排序/" class="archive-article-date">
-  	<time datetime="2019-10-03T09:30:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/10/17/数据结构和算法绪论-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构和算法绪论-3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/14/数据结构和算法绪论-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构和算法绪论（1）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/排序算法之冒泡排序/">排序算法之冒泡排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一章-绪论（二）"><span class="toc-number">1.</span> <span class="toc-text">第一章  绪论（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-大O记号"><span class="toc-number">1.1.</span> <span class="toc-text">(C)大O记号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-渐进分析：Big-O"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 渐进分析：Big O</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-渐进分析：其它记号"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 渐进分析：其它记号</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-bigΩ和bigθ"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">2.1 bigΩ和bigθ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-常数复杂度O-1"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">2.2 常数复杂度O(1)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-对数复杂度O-logcn"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">2.3 对数复杂度O(logcn)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-多项式复杂度-polynomial-function"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">2.4 多项式复杂度 (polynomial function)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-复杂度总结"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. 复杂度总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-指数复杂度-exponential-function"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">3.1 指数复杂度(exponential function)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-总结"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">3.2 总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-算法分析"><span class="toc-number">1.2.</span> <span class="toc-text">(D) 算法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-算法分析"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 算法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-级数"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 级数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-循环与级数"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 循环与级数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-取非极端元素、冒泡排序"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 取非极端元素、冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-取非极端元素"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">4.1 取非极端元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-起泡排序"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">4.2 起泡排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-起泡排序的分析"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 起泡排序的分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-封底估算"><span class="toc-number">1.2.6.</span> <span class="toc-text">6. 封底估算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-封底估算实例"><span class="toc-number">1.2.7.</span> <span class="toc-text">7. 封底估算实例</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/02/排序算法之选择排序/" class="archive-article-date">
-  	<time datetime="2019-10-02T04:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-02</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/02/排序算法之选择排序/">排序算法之选择排序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/01/排序算法之基础概念/" class="archive-article-date">
-  	<time datetime="2019-10-01T14:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/排序算法之基础概念/">排序算法之基础概念</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/10/">&laquo; Prev</a><a class="page-number" href="/archives/2019/10/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -340,8 +662,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | MyBlog</title>
+  <title>XML基础 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="MyBlog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/page/2/index.html">
+  <meta name="description" content="1. XMl">
+<meta name="keywords" content="xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XML基础">
+<meta property="og:url" content="http://yoursite.com/2019/10/23/XML基础/index.html">
 <meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="1. XMl">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-23T15:54:21.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyBlog">
+<meta name="twitter:title" content="XML基础">
+<meta name="twitter:description" content="1. XMl">
   
     <link rel="alternative" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -146,177 +151,214 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-XML基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      XML基础
+    </h1>
+  
+
+        
+        <a href="/2019/10/23/XML基础/" class="archive-article-date">
+  	<time datetime="2019-10-23T12:10:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-XMl"><a href="#1-XMl" class="headerlink" title="1. XMl"></a>1. XMl</h1><a id="more"></a>
+
+<h2 id="1-1-xml简介"><a href="#1-1-xml简介" class="headerlink" title="1.1 xml简介"></a>1.1 xml简介</h2><p>a) xml：e<font color="red">X</font>tensible <font color="red">M</font>arkup <font color="red">L</font>anguage，可拓展标记语言。标记语言。<br>b）xml是一种非常灵活的语言，所有的标签都可以自己定义。<br>c）通常xml被用于信息的记录和传递。因此，xml经常被用于充当配置文件。</p>
+<hr>
+<h2 id="1-2-格式"><a href="#1-2-格式" class="headerlink" title="1.2 格式"></a>1.2 格式</h2><p>a） 声明信息 xml版本与编码信息  </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>b）xml有且今后一个根元素，根元素即没有被其他元素包围起来的元素。<br>c）xml大小写敏感。<br>d）标签成对出现。<br>e）属性值要使用双引号。<br>f）注释的书写方式。  </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--这里是注释--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>格式良好的xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version = "1.0" encoding = "utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">books</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">book</span> <span class="attr">id</span> = <span class="string">"b001"</span>&gt;</span></span><br><span class="line">	 	<span class="tag">&lt;<span class="name">name</span>&gt;</span>《人生》<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	 	<span class="tag">&lt;<span class="name">author</span>&gt;</span>路遥<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">	 	<span class="tag">&lt;<span class="name">price</span>&gt;</span>36.8<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">book</span> <span class="attr">id</span> = <span class="string">"b002"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>《平凡的世界》<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">author</span>&gt;</span>路遥<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">price</span>&gt;</span>38.8<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">books</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="另："><a href="#另：" class="headerlink" title="另："></a>另：</h2><p>有效的xml文档：<br>（1）首先必须是格式良好的；<br>（2）使用DTD和XSD(xml schema)定义约束语句。</p>
+<hr>
+<h1 id="2-DTD的使用"><a href="#2-DTD的使用" class="headerlink" title="2. DTD的使用"></a>2. DTD的使用</h1><h2 id="2-1-DTD简介"><a href="#2-1-DTD简介" class="headerlink" title="2.1 DTD简介"></a>2.1 DTD简介</h2><p>a）DTD：Document Type Definition 文档类型定义。<br>b）用于约束xml的文档格式，保证xml是一个有效的xml。<br>c）DTD可以分为两种，内部DTD，外部DTD。</p>
+<hr>
+<h2 id="2-2-使用DTD"><a href="#2-2-使用DTD" class="headerlink" title="2.2 使用DTD"></a>2.2 使用DTD</h2><h3 id="2-2-1-内部DTD"><a href="#2-2-1-内部DTD" class="headerlink" title="2.2.1 内部DTD"></a>2.2.1 内部DTD</h3><p>a）内部DTD的定义，语法如下：  </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE 根元素 [元素声明]&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>b）元素声明语法：  </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">!ELEMENT</span> 元素名 (子元素[,子元素<span class="attr">...</span>])&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>c）数量词  </p>
+<blockquote>
+<p>+：表示出现一次货多次，至少一次<br>?：表示出现0次或1次<br>*：表示出现任意次  </p>
+</blockquote>
+<p>d）属性声明语法  </p>
+<blockquote>
+<p>属性类型：CDATA，表示字符数据(character data)  </p>
+</blockquote>
+<blockquote>
+<p>默认值：  </p>
+<ul>
+<li>#REQUIRED，表示必须出现  </li>
+<li>#IMPLIED，表示不是必须的</li>
+</ul>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">!ATTLIST</span> 元素名称 属性名称 属性类型 默认值&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">!ATTLIST</span> <span class="attr">student</span> <span class="attr">id</span> <span class="attr">CDATA</span> #<span class="attr">REQUIRED</span>&gt;</span> </span><br><span class="line"><span class="comment">&lt;!--为student元素添加属性id，id的类型是CDATA，默认为#REQUIRED--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>#PCDATA(parsed character data)被解析的字符数据。<br>可把字符数据想象为xml元素的开始标签与结束标签之间的文本。<br>声明标签内部只可以写文本，不可以写子标签。  </p>
+<p>e）带DTD的完整xml代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="comment">&lt;!--声明内部DTD--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE scores [</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT scores (student*)&gt;  &lt;!--对scores进行限制--&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT student (name,course,score)&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ATTLIST student id CDATA #REQUIRED&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT name (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT course (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">	&lt;!ELEMENT score (#PCDATA)&gt;</span></span><br><span class="line"><span class="meta">]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">scores</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span> <span class="attr">id</span>=<span class="string">"0001"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>赵达<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">course</span>&gt;</span>java<span class="tag">&lt;/<span class="name">course</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">score</span>&gt;</span>99<span class="tag">&lt;/<span class="name">score</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">student</span> <span class="attr">id</span>=<span class="string">"0002"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>钱尔<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">course</span>&gt;</span>sql<span class="tag">&lt;/<span class="name">course</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">score</span>&gt;</span>96<span class="tag">&lt;/<span class="name">score</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">student</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">scores</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-2-外部DTD"><a href="#2-2-2-外部DTD" class="headerlink" title="2.2.2 外部DTD"></a>2.2.2 外部DTD</h3><p>a）创建一个独立的DTD文件  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ELEMENT scores (student*)&gt;</span><br><span class="line">&lt;!ELEMENT student (name,course,score)&gt;</span><br><span class="line">&lt;!ATTLIST student id CDATA #REQUIRED&gt;</span><br><span class="line">&lt;!ELEMENT name (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT course (#PCDATA)&gt;</span><br><span class="line">&lt;!ELEMENT score (#PCDATA)&gt;</span><br></pre></td></tr></table></figure>
+
+<p>b）在xml中引入外部DTD文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--引入外部DTD文件--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE scores SYSTEM "scores.dtd"&gt;</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/04/排序算法之插入排序/" class="archive-article-date">
-  	<time datetime="2019-10-04T13:52:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/04/排序算法之插入排序/">排序算法之插入排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">xml</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/23/XML基础/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/排序算法之冒泡排序/" class="archive-article-date">
-  	<time datetime="2019-10-03T09:30:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/12/17/代理抛出异常错误/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          代理抛出异常错误
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/17/数据结构和算法绪论-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构和算法绪论-3</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/排序算法之冒泡排序/">排序算法之冒泡排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-XMl"><span class="toc-number">1.</span> <span class="toc-text">1. XMl</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-xml简介"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 xml简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-格式"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另："><span class="toc-number">1.3.</span> <span class="toc-text">另：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-DTD的使用"><span class="toc-number">2.</span> <span class="toc-text">2. DTD的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-DTD简介"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 DTD简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-使用DTD"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 使用DTD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-内部DTD"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.2.1 内部DTD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-外部DTD"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.2 外部DTD</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/02/排序算法之选择排序/" class="archive-article-date">
-  	<time datetime="2019-10-02T04:57:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-02</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/02/排序算法之选择排序/">排序算法之选择排序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/01/排序算法之基础概念/" class="archive-article-date">
-  	<time datetime="2019-10-01T14:47:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/排序算法之基础概念/">排序算法之基础概念</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/10/">&laquo; Prev</a><a class="page-number" href="/archives/2019/10/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -340,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
